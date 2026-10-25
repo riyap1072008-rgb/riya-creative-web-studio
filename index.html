@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ms. Riya Prajapati | Creative Web Studio</title>
+
+    <meta name="description" content="Discover creative and responsive website design by Ms. Riya Prajapati Creative Web Studio. Business websites, portfolios and custom web projects.">
+
+    <style>
+        :root {
+            --bg: #071426;
+            --surface: #0d203a;
+            --card: #102541;
+            --text: #ffffff;
+            --muted: #c0cada;
+            --gold: #d6ad55;
+            --border: rgba(214, 173, 85, 0.35);
+            --shadow: rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode {
+            --bg: #f4f7fc;
+            --surface: #e8eef7;
+            --card: #ffffff;
+            --text: #10213a;
+            --muted: #4d5b70;
+            --gold: #a87919;
+            --border: rgba(168, 121, 25, 0.35);
+            --shadow: rgba(20, 35, 60, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 17px 6%;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            text-decoration: none;
+            color: var(--gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 16px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .theme-toggle {
+            padding: 8px 12px;
+            border: 1px solid var(--gold);
+            border-radius: 22px;
+            background: var(--card);
+            color: var(--text);
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            background: var(--gold);
+            color: #071426;
+        }
+
+        .hero {
+            min-height: 580px;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 30%, var(--surface), transparent 45%),
+                var(--bg);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        h1 span,
+        h2 span {
+            color: var(--gold);
+        }
+
+        .hero p.description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 23px;
+            margin: 5px 8px 5px 0;
+            border: 1px solid var(--gold);
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: var(--gold);
+            color: #071426;
+        }
+
+        .button-secondary {
+            color: var(--gold);
+            background: transparent;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-primary:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .button-secondary:hover {
+            background: var(--gold);
+            color: #071426;
+        }
+
+        section.content-section {
+            padding: 75px 7%;
+        }
+
+        .section-alt {
+            background: var(--surface);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--card);
+        }
+
+        .about-box p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .item-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: var(--card);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .item-icon {
+            font-size: 30px;
+            margin-bottom: 13px;
+        }
+
+        .item-card h3 {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .item-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .text-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .process {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 25px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .process-number {
+            color: var(--gold);
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 65px 20px;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta h2 {
+            font-size: clamp(27px, 4vw, 38px);
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: var(--muted);
+            margin-bottom: 23px;
+        }
+
+        footer {
+            padding: 28px 15px;
+            text-align: center;
+            background: var(--surface);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 90;
+            padding: 12px 17px;
+            background: var(--gold);
+            color: #071426;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        @media (max-width: 850px) {
+            header {
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 75px 7%;
+            }
+        }
+
+        @media (max-width: 560px) {
+            header {
+                padding: 15px 4%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .brand {
+                width: 100%;
+                text-align: center;
+            }
+
+            .grid,
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            section.content-section {
+                padding: 55px 5%;
+            }
+
+            .hero p.description {
+                font-size: 15px;
+            }
+
+            .about-box {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="brand">
+            MS. RIYA PRAJAPATI
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="order.html">Order Website</a>
+            <a href="contact.html">Contact</a>
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+            >
+                ☀️ Light Mode
+            </button>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <p class="eyebrow">Worldwide Web Design</p>
+
+            <h1>
+                Hi, I'm <span>Riya Prajapati</span>
+            </h1>
+
+            <h2>Creative Web Studio</h2>
+
+            <p class="description">
+                I design modern, attractive and responsive websites
+                for businesses, personal brands, colleges and creative
+                projects. Let's turn your ideas into a beautiful
+                online presence.
+            </p>
+
+            <a href="portfolio.html" class="button button-primary">
+                Explore My Work ↗
+            </a>
+
+            <a href="order.html" class="button button-secondary">
+                Order Your Website
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+        <div class="section-heading">
+            <p class="eyebrow">Get To Know Me</p>
+            <h2>About <span>Me</span></h2>
+            <p>A creative approach to building websites.</p>
+        </div>
+
+        <div class="about-box">
+            <p>
+                Welcome to Ms. Riya Prajapati — Creative Web Studio.
+                I am developing my skills in website design and
+                front-end development, with a focus on attractive
+                layouts and user-friendly experiences.
+            </p>
+
+            <p>
+                My goal is to help individuals and businesses build
+                an online presence with websites that look professional
+                on both mobile phones and computers.
+            </p>
+
+            <p>
+                Every project begins with understanding the client's
+                needs, planning the design and creating a website
+                suited to the project.
+            </p>
+
+            <a href="contact.html" class="text-link">
+                Let's Connect ↗
+            </a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="content-section section-alt" id="services">
+        <div class="section-heading">
+            <p class="eyebrow">What I Can Create</p>
+            <h2>My <span>Services</span></h2>
+            <p>Website solutions for different ideas and needs.</p>
+        </div>
+
+        <div class="grid">
+
+            <article class="item-card">
+                <div class="item-icon">🌐</div>
+                <h3>Business Websites</h3>
+                <p>
+                    Professional websites to introduce your business,
+                    services and contact information.
+                </p>
+                <a href="services.html" class="text-link">Learn More ↗</a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">👩‍💻</div>
+                <h3>Personal Portfolios</h3>
+                <p>
+                    Showcase your skills, projects and achievements
+                    in a personal portfolio.
+                </p>
+                <a href="services.html" class="text-link">Learn More ↗</a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">🎓</div>
+                <h3>College Websites</h3>
+                <p>
+                    Present courses, facilities, announcements
+                    and useful college information.
+                </p>
+                <a href="services.html" class="text-link">Learn More ↗</a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">🛍️</div>
+                <h3>Shop & Product Pages</h3>
+                <p>
+                    Display products, services and important
+                    details in an organized layout.
+                </p>
+                <a href="services.html" class="text-link">Learn More ↗</a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>
+                    Designs that adapt to mobile phones,
+                    tablets and desktop screens.
+                </p>
+                <a href="services.html" class="text-link">Learn More ↗</a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">✨</div>
+                <h3>Custom Landing Pages</h3>
+                <p>
+                    Focused pages for projects, promotions
+                    and specific business goals.
+                </p>
+                <a href="services.html" class="text-link">Learn More ↗</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECT -->
+    <section class="content-section" id="projects">
+        <div class="section-heading">
+            <p class="eyebrow">Selected Work</p>
+            <h2>Featured <span>Project</span></h2>
+            <p>Explore a website project I've worked on.</p>
+        </div>
+
+        <div class="grid">
+
+            <article class="item-card">
+                <div class="item-icon">⚡</div>
+                <h3>Brahmani Electrical Works</h3>
+                <p>
+                    A local electrical services website for presenting
+                    services and helping customers make contact.
+                </p>
+
+                <a
+                    href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
+                    class="text-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visit Live Website ↗
+                </a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">💼</div>
+                <h3>Creative Portfolio</h3>
+                <p>
+                    A space to showcase web design projects,
+                    skills and creative ideas.
+                </p>
+
+                <a href="portfolio.html" class="text-link">
+                    View Portfolio ↗
+                </a>
+            </article>
+
+            <article class="item-card">
+                <div class="item-icon">🚀</div>
+                <h3>Your Next Project</h3>
+                <p>
+                    Have a website idea? Let's discuss what
+                    you want to create.
+                </p>
+
+                <a href="order.html" class="text-link">
+                    Start a Project ↗
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="content-section section-alt" id="process">
+        <div class="section-heading">
+            <p class="eyebrow">How It Works</p>
+            <h2>My Working <span>Process</span></h2>
+            <p>Three simple steps to get started.</p>
+        </div>
+
+        <div class="process">
+
+            <article class="process-card">
+                <div class="process-number">01</div>
+                <h3>Understand</h3>
+                <p>
+                    We discuss your idea, audience
+                    and website requirements.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <div class="process-number">02</div>
+                <h3>Design</h3>
+                <p>
+                    We plan the layout, colours
+                    and content for your project.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <div class="process-number">03</div>
+                <h3>Build</h3>
+                <p>
+                    The website is developed and
+                    checked before publication.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="cta" id="contact">
+        <p class="eyebrow">Your Idea Starts Here</p>
+
+        <h2>Ready to Build Your <span>Website?</span></h2>
+
+        <p>
+            Tell me about your project and let's discuss
+            the next steps.
+        </p>
+
+        <a href="order.html" class="button button-primary">
+            Order Your Website ↗
+        </a>
+
+        <a href="contact.html" class="button button-secondary">
+            Contact Me
+        </a>
+    </section>
+
+    <footer>
+        <p>
+            © <span id="year"></span>
+            <span>Ms. Riya Prajapati</span> — Creative Web Studio.
+        </p>
+
+        <p>Creative Ideas · Modern Design · Digital Future</p>
+    </footer>
+
+    <a href="contact.html" class="floating-contact">
+        Contact ↗
+    </a>
+
+    <script>
+        // Dark / Light Mode
+        const themeToggle = document.getElementById("themeToggle");
+
+        function applyTheme(theme) {
+            document.body.classList.toggle(
+                "light-mode",
+                theme === "light"
+            );
+
+            themeToggle.textContent =
+                theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+        }
+
+        const savedTheme = localStorage.getItem("riyaTheme");
+
+        applyTheme(savedTheme === "light" ? "light" : "dark");
+
+        themeToggle.addEventListener("click", function () {
+            const newTheme =
+                document.body.classList.contains("light-mode")
+                    ? "dark"
+                    : "light";
+
+            applyTheme(newTheme);
+            localStorage.setItem("riyaTheme", newTheme);
+        });
+
+        // Automatic current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

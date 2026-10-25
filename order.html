@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order a Website | Ms. Riya Prajapati</title>
+
+    <meta name="description" content="Order a professional website from Ms. Riya Prajapati Creative Web Studio. Share your project requirements through WhatsApp.">
+
+    <style>
+        :root {
+            --bg: #071426;
+            --surface: #0d203a;
+            --card: #102541;
+            --text: #ffffff;
+            --muted: #c0cada;
+            --gold: #d6ad55;
+            --border: rgba(214, 173, 85, 0.35);
+            --input: #091a30;
+            --shadow: rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode {
+            --bg: #f4f7fc;
+            --surface: #e8eef7;
+            --card: #ffffff;
+            --text: #10213a;
+            --muted: #4d5b70;
+            --gold: #a87919;
+            --border: rgba(168, 121, 25, 0.35);
+            --input: #f7f9fd;
+            --shadow: rgba(20, 35, 60, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 17px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+        }
+
+        .theme-toggle {
+            padding: 9px 13px;
+            border: 1px solid var(--gold);
+            border-radius: 25px;
+            background: var(--card);
+            color: var(--text);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--gold);
+            color: #071426;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+            background:
+                radial-gradient(circle at top, var(--surface), var(--bg));
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: var(--gold);
+        }
+
+        .hero p:last-child {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px 20px 65px;
+        }
+
+        .order-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .section-heading {
+            color: var(--gold);
+            font-size: 21px;
+            margin-bottom: 7px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 23px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 19px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label,
+        legend {
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .required {
+            color: var(--gold);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            background: var(--input);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(214, 173, 85, 0.12);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: var(--muted);
+            opacity: 0.8;
+        }
+
+        select option {
+            background: var(--card);
+            color: var(--text);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 115px;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .feature-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--input);
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .feature-option input {
+            width: auto;
+            margin-top: 4px;
+            accent-color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .note {
+            margin-top: 23px;
+            padding: 14px 16px;
+            border-left: 3px solid var(--gold);
+            background: var(--surface);
+            border-radius: 5px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 24px;
+            padding: 16px 20px;
+            background: var(--gold);
+            color: #071426;
+            border: 1px solid var(--gold);
+            border-radius: 9px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .privacy-note {
+            text-align: center;
+            margin-top: 13px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        footer {
+            padding: 25px 15px;
+            text-align: center;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 17px 5%;
+            }
+
+            nav {
+                width: 100%;
+                gap: 13px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .order-card {
+                padding: 23px 17px;
+            }
+
+            .form-grid,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="brand" href="index.html">
+            RIYA PRAJAPATI
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="order.html" class="active">Order</a>
+            <a href="contact.html">Contact</a>
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+            >
+                ☀️ Light Mode
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">Let's Build Something Great</p>
+
+        <h1>Order Your <span>Website</span></h1>
+
+        <p>
+            Have an idea for your business or personal brand?
+            Share your requirements below and let's discuss
+            your dream website.
+        </p>
+    </section>
+
+    <main class="container">
+        <section class="order-card">
+
+            <h2 class="section-heading">Website Project Enquiry</h2>
+
+            <p class="section-description">
+                Fill in the details below. Your enquiry will be prepared
+                in WhatsApp so you can review and send it.
+            </p>
+
+            <form id="orderForm">
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="customerName">
+                            Your Name <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="customerName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="customerPhone">
+                            Your Mobile Number <span class="required">*</span>
+                        </label>
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            name="customerPhone"
+                            placeholder="Enter your mobile number"
+                            autocomplete="tel"
+                            inputmode="tel"
+                            pattern="[0-9+\s()-]{8,20}"
+                            title="Enter a valid mobile or contact number"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="businessName">
+                            Business / Brand Name
+                        </label>
+                        <input
+                            type="text"
+                            id="businessName"
+                            name="businessName"
+                            placeholder="Enter business name if applicable"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="websiteType">
+                            Website Type <span class="required">*</span>
+                        </label>
+                        <select
+                            id="websiteType"
+                            name="websiteType"
+                            required
+                        >
+                            <option value="">Choose website type</option>
+                            <option>Business Website</option>
+                            <option>Personal Portfolio</option>
+                            <option>College / Education Website</option>
+                            <option>Restaurant / Cafe Website</option>
+                            <option>Fashion / Clothing Website</option>
+                            <option>Salon / Beauty Website</option>
+                            <option>Real Estate Website</option>
+                            <option>Online Store / E-commerce</option>
+                            <option>Landing Page</option>
+                            <option>Other / Custom Website</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="pages">
+                            Approximate Number of Pages
+                        </label>
+                        <select id="pages" name="pages">
+                            <option value="">Not sure yet</option>
+                            <option>1 page</option>
+                            <option>2–4 pages</option>
+                            <option>5–7 pages</option>
+                            <option>8 or more pages</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="timeline">
+                            When Do You Need It?
+                        </label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Flexible / Not decided</option>
+                            <option>As soon as possible</option>
+                            <option>Within 1–2 weeks</option>
+                            <option>Within a month</option>
+                            <option>No fixed deadline</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="field full-width">
+                        <legend>Features You May Need</legend>
+
+                        <div class="features">
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Mobile-friendly design">
+                                <span>Mobile-friendly design</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="WhatsApp contact button">
+                                <span>WhatsApp contact button</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Contact form">
+                                <span>Contact form</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Photo / Project Gallery">
+                                <span>Photo / Project Gallery</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Online ordering">
+                                <span>Online ordering</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Admin panel">
+                                <span>Admin panel</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Dark / Light Mode">
+                                <span>Dark / Light Mode</span>
+                            </label>
+
+                            <label class="feature-option">
+                                <input type="checkbox" name="features" value="Gujarati / English / Hindi">
+                                <span>Gujarati / English / Hindi</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="field full-width">
+                        <label for="reference">
+                            Reference Website Link (Optional)
+                        </label>
+                        <input
+                            type="url"
+                            id="reference"
+                            name="reference"
+                            placeholder="https://example.com"
+                        >
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="details">
+                            Tell Me About Your Project
+                            <span class="required">*</span>
+                        </label>
+                        <textarea
+                            id="details"
+                            name="details"
+                            placeholder="Describe your business, website idea, preferred colours or other requirements..."
+                            required
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <div class="note">
+                    <strong>Next step:</strong>
+                    After submitting this form, WhatsApp will open with
+                    your project details. Please review the message and
+                    press Send in WhatsApp to send your enquiry.
+                    Final features, price and timeline will be discussed
+                    and confirmed separately.
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Order Enquiry on WhatsApp ↗
+                </button>
+
+                <p class="privacy-note">
+                    Your enquiry is not sent automatically. You must press
+                    Send in WhatsApp to submit it.
+                </p>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year"></span>
+        <span>Ms. Riya Prajapati</span> — Creative Web Studio.
+        All rights reserved.
+    </footer>
+
+    <script>
+        // IMPORTANT:
+        // Replace this placeholder with your WhatsApp number.
+        // Use country code 91 and digits only, without + or spaces.
+        // Example format: 919876543210
+        const whatsappNumber = "919428570574";
+
+        // Dark / Light Mode
+        const themeToggle = document.getElementById("themeToggle");
+
+        function applyTheme(theme) {
+            document.body.classList.toggle(
+                "light-mode",
+                theme === "light"
+            );
+
+            themeToggle.textContent =
+                theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+        }
+
+        const savedTheme = localStorage.getItem("riyaTheme");
+
+        applyTheme(savedTheme === "light" ? "light" : "dark");
+
+        themeToggle.addEventListener("click", function () {
+            const newTheme =
+                document.body.classList.contains("light-mode")
+                    ? "dark"
+                    : "light";
+
+            applyTheme(newTheme);
+            localStorage.setItem("riyaTheme", newTheme);
+        });
+
+        // Current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Website Order Form -> WhatsApp
+        document.getElementById("orderForm").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
+
+                if (!this.reportValidity()) {
+                    return;
+                }
+
+                if (!/^\d{10,15}$/.test(whatsappNumber)) {
+                    alert(
+                        "Please add your WhatsApp number in the code before testing the order form."
+                    );
+                    return;
+                }
+
+                const customerName =
+                    document.getElementById("customerName").value.trim();
+
+                const customerPhone =
+                    document.getElementById("customerPhone").value.trim();
+
+                const businessName =
+                    document.getElementById("businessName").value.trim();
+
+                const websiteType =
+                    document.getElementById("websiteType").value;
+
+                const pages =
+                    document.getElementById("pages").value || "Not specified";
+
+                const timeline =
+                    document.getElementById("timeline").value ||
+                    "Not specified";
+
+                const reference =
+                    document.getElementById("reference").value.trim() ||
+                    "Not provided";
+
+                const details =
+                    document.getElementById("details").value.trim();
+
+                const selectedFeatures = Array.from(
+                    document.querySelectorAll(
+                        'input[name="features"]:checked'
+                    )
+                ).map(function (checkbox) {
+                    return checkbox.value;
+                });
+
+                const featuresText = selectedFeatures.length
+                    ? selectedFeatures.join(", ")
+                    : "Not specified";
+
+                const message = [
+                    "🌐 *NEW WEBSITE PROJECT ENQUIRY*",
+                    "",
+                    "*From:* MS. RIYA PRAJAPATI — CREATIVE WEB STUDIO",
+                    "",
+                    "*Customer Name:* " + customerName,
+                    "*Customer Mobile:* " + customerPhone,
+                    "*Business / Brand:* " + (businessName || "Not provided"),
+                    "*Website Type:* " + websiteType,
+                    "*Number of Pages:* " + pages,
+                    "*Required Timeline:* " + timeline,
+                    "*Requested Features:* " + featuresText,
+                    "*Reference Website:* " + reference,
+                    "",
+                    "*Project Details:*",
+                    details,
+                    "",
+                    "Please contact me to discuss the project requirements."
+                ].join("\n");
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(message);
+
+                window.open(whatsappURL, "_blank", "noopener,noreferrer");
+            }
+        );
+    </script>
+
+</body>
+</html>

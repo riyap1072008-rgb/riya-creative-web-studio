@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services | MS. Riya Prajapati — Creative Web Studio</title>
+  <meta name="description" content="Explore website design services by MS. Riya Prajapati Creative Web Studio.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #071426;
+      --panel: #10243d;
+      --gold: #d9b66d;
+      --white: #f8f7f3;
+      --muted: #b9c3d1;
+      --border: rgba(217, 182, 109, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 85px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 95px 0 75px;
+      background:
+        radial-gradient(ellipse at top, rgba(217,182,109,0.10), transparent 65%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+    .services {
+      padding: 25px 0 90px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 30px 25px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      color: var(--white);
+      font-size: 13px;
+    }
+
+    .service-card li {
+      margin-bottom: 7px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .process {
+      background: #0b1a2d;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 75px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .process-item {
+      padding: 22px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .process-item strong {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .process-item h3 {
+      font-size: 21px;
+      margin: 10px 0;
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact {
+      padding: 80px 0;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 50px 25px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(29px, 4vw, 42px);
+      margin: 12px 0;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 22px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .btn:hover {
+      background: #f0d59b;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-inner strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .service-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 0 50px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        MS. RIYA PRAJAPATI
+        <span>CREATIVE WEB STUDIO</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#work">My Work</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">✦ My Creative Services</div>
+        <h1>Ideas Into <span>Beautiful Websites.</span></h1>
+        <p>
+          Every idea deserves a thoughtful online presence.
+          Explore the types of websites I can create as I grow my
+          skills in modern web design and development.
+        </p>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What I Offer</div>
+          <h2>Website Design Services</h2>
+          <p>Choose a website style that fits your needs and goals.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="icon">🏢</div>
+            <h3>Business Websites</h3>
+            <p>Help your business present its services and contact information online.</p>
+            <ul>
+              <li>Business introduction</li>
+              <li>Services and information</li>
+              <li>Contact section</li>
+              <li>Mobile-friendly layout</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">✧</div>
+            <h3>Personal Portfolio</h3>
+            <p>Showcase your skills, achievements, experience and creative projects.</p>
+            <ul>
+              <li>Personal introduction</li>
+              <li>Skills and achievements</li>
+              <li>Project showcase</li>
+              <li>Contact links</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🎓</div>
+            <h3>College Websites</h3>
+            <p>Present educational information in a clear and organized layout.</p>
+            <ul>
+              <li>Courses and departments</li>
+              <li>College facilities</li>
+              <li>Student information</li>
+              <li>Contact details</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🛍️</div>
+            <h3>Product & Service Pages</h3>
+            <p>Display products or services with organized descriptions and details.</p>
+            <ul>
+              <li>Product information</li>
+              <li>Service descriptions</li>
+              <li>Enquiry links</li>
+              <li>Clean page layouts</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Create layouts designed to work across different screen sizes.</p>
+            <ul>
+              <li>Mobile layouts</li>
+              <li>Tablet-friendly pages</li>
+              <li>Desktop layouts</li>
+              <li>Readable content</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🎨</div>
+            <h3>Custom Landing Pages</h3>
+            <p>Build a focused page to introduce an idea, service or project.</p>
+            <ul>
+              <li>Welcome sections</li>
+              <li>Clear headings</li>
+              <li>Action buttons</li>
+              <li>Coordinated colours</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="note">
+          Note: Services are offered according to project requirements and my current development skills.
+          Advanced features may require additional development.
+        </p>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">How I Work</div>
+          <h2>A Simple Creative Process</h2>
+          <p>Each project starts with understanding the idea.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-item">
+            <strong>STEP 01</strong>
+            <h3>Understand</h3>
+            <p>Discuss the website idea, purpose and important details.</p>
+          </article>
+
+          <article class="process-item">
+            <strong>STEP 02</strong>
+            <h3>Design</h3>
+            <p>Plan the page layout, colours, content and overall appearance.</p>
+          </article>
+
+          <article class="process-item">
+            <strong>STEP 03</strong>
+            <h3>Build</h3>
+            <p>Create the agreed website pages and check them on different screens.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Let's Create Together</div>
+          <h2>Have a Website Idea?</h2>
+          <p>
+            Tell me about your project, what you need and the kind of
+            website you imagine. We can discuss the next steps together.
+          </p>
+          <a class="btn" href="index.html#contact">
+            Contact Me ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <strong>MS. RIYA PRAJAPATI — CREATIVE WEB STUDIO</strong>
+      <span>© 2026 All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>

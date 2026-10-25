@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Portfolio | MS. Riya Prajapati — Creative Web Studio</title>
+  <meta name="description" content="Explore seven website projects by MS. Riya Prajapati Creative Web Studio.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #071426;
+      --panel: #10243d;
+      --gold: #d9b66d;
+      --white: #f8f7f3;
+      --muted: #b9c3d1;
+      --border: rgba(217, 182, 109, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: #09172a;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 85px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      line-height: 1.5;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    nav a {
+      transition: color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .hero {
+      padding: 90px 0 65px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, #1a2c43, transparent 70%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 62px);
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 660px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .project-count {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 8px 17px;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    .portfolio {
+      padding: 35px 0 90px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .project {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .project-image {
+      height: 225px;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, #263c54, transparent 60%),
+        linear-gradient(135deg, #132a46, #071426);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mock-browser {
+      width: 100%;
+      max-width: 390px;
+      overflow: hidden;
+      background: #f5f0e6;
+      color: #071426;
+      border-radius: 6px;
+      box-shadow: 0 12px 30px #0005;
+    }
+
+    .browser-bar {
+      height: 25px;
+      padding: 8px 10px;
+      display: flex;
+      gap: 5px;
+      background: #e1dbcf;
+    }
+
+    .browser-bar i {
+      width: 7px;
+      height: 7px;
+      background: #9b958a;
+      border-radius: 50%;
+    }
+
+    .mock-content {
+      min-height: 125px;
+      padding: 22px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mock-content strong {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(15px, 2vw, 22px);
+      line-height: 1.4;
+    }
+
+    .mock-content span {
+      margin-top: 7px;
+      font-size: 10px;
+      color: #555;
+    }
+
+    .mock-line {
+      width: 65%;
+      height: 5px;
+      margin-top: 15px;
+      background: #d9b66d;
+      border-radius: 5px;
+    }
+
+    .project-info {
+      padding: 27px;
+    }
+
+    .project-type {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .project-info h2 {
+      font-size: 25px;
+      margin: 9px 0 12px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 11px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 3px;
+    }
+
+    .cta {
+      padding: 0 0 85px;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 50px 25px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(29px, 4vw, 42px);
+      margin: 12px 0;
+    }
+
+    .cta-box p {
+      max-width: 580px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #f0d59b;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 65px 0 45px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 210px;
+      }
+
+      .project-info {
+        padding: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        MS. RIYA PRAJAPATI
+        <span>CREATIVE WEB STUDIO</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="portfolio.html">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">✦ My Creative Journey</div>
+        <h1>My Work, My <span>Creativity.</span></h1>
+        <p>
+          Every project is a new opportunity to learn, design and grow.
+          Explore my website projects and creative concepts.
+        </p>
+        <div class="project-count">7 Website Projects</div>
+      </div>
+    </section>
+
+    <section class="portfolio">
+      <div class="container">
+        <div class="portfolio-grid">
+
+          <!-- 1. Riya Fashion Store -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>RIYA FASHION STORE</strong>
+                  <span>Fashion · Style · Trends</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">01 / Fashion</div>
+              <h2>Riya Fashion Store</h2>
+              <p>A fashion website concept to showcase collections, clothing styles and product information.</p>
+              <span class="status">Website Project</span>
+            </div>
+          </article>
+
+          <!-- 2. Royal Restaurant -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>ROYAL RESTAURANT</strong>
+                  <span>Delicious Food · Menu · Dining</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">02 / Restaurant</div>
+              <h2>Royal Restaurant</h2>
+              <p>A restaurant website concept for showcasing the menu, dining experience and restaurant details.</p>
+              <span class="status">Website Project</span>
+            </div>
+          </article>
+
+          <!-- 3. Royal Beauty Salon -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>ROYAL BEAUTY SALON</strong>
+                  <span>Beauty · Care · Style</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">03 / Beauty</div>
+              <h2>Royal Beauty Salon</h2>
+              <p>An elegant salon website concept to display beauty services, treatments and contact details.</p>
+              <span class="status">Website Project</span>
+            </div>
+          </article>
+
+          <!-- 4. Royal Estate -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>ROYAL ESTATE</strong>
+                  <span>Properties · Homes · Real Estate</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">04 / Real Estate</div>
+              <h2>Royal Estate</h2>
+              <p>A real estate website concept for presenting properties and property information.</p>
+              <span class="status">Website Project</span>
+            </div>
+          </article>
+
+          <!-- 5. TechZone Electronics -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>TECHZONE ELECTRONICS</strong>
+                  <span>Technology · Gadgets · Electronics</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">05 / Technology</div>
+              <h2>TechZone Electronics</h2>
+              <p>A technology website concept for showcasing electronic products and gadgets.</p>
+              <span class="status">Website Project</span>
+            </div>
+          </article>
+
+          <!-- 6. Narmada College -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>NARMADA COLLEGE</strong>
+                  <span>Education · Courses · Campus</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">06 / Education</div>
+              <h2>Narmada College of Science and Commerce</h2>
+              <p>An educational website project featuring college information, courses and facilities.</p>
+              <span class="status">Website Project</span>
+            </div>
+          </article>
+
+          <!-- 7. Brahmani Electrical Works -->
+          <article class="project">
+            <div class="project-image">
+              <div class="mock-browser">
+                <div class="browser-bar"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <strong>BRAHMANI ELECTRICAL WORKS</strong>
+                  <span>Electrical Services · Ankleshwar</span>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-type">07 / Business</div>
+              <h2>Brahmani Electrical Works</h2>
+              <p>A business website for electrical services in Ankleshwar, Gujarat.</p>
+              <a class="project-link"
+                 href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
+                 target="_blank" rel="noopener noreferrer">
+                Visit Live Website ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="eyebrow">Let's Create Together</div>
+          <h2>Have a Website Idea?</h2>
+          <p>
+            Have an idea for a business website or personal portfolio?
+            Visit my contact section to discuss your project.
+          </p>
+          <a class="btn" href="index.html#contact">Let's Talk ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <strong>MS. RIYA PRAJAPATI — CREATIVE WEB STUDIO</strong>
+      <span>© 2026 All rights reserved.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

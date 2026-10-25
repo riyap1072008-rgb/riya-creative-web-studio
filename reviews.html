@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reviews | Ms. Riya Prajapati - Creative Web Studio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #071426;
+            --navy-light: #102541;
+            --gold: #d6ad55;
+            --white: #ffffff;
+            --muted: #b9c4d3;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            gap: 20px;
+            border-bottom: 1px solid rgba(214, 173, 85, 0.3);
+        }
+
+        .brand {
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(35px, 6vw, 58px);
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 25px 70px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(214, 173, 85, 0.25);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 23px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .review-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .review-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .demo-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 22px;
+        }
+
+        .form-card {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px;
+            background: var(--navy-light);
+            border: 1px solid rgba(214, 173, 85, 0.3);
+            border-radius: 18px;
+        }
+
+        .form-card > p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border-radius: 9px;
+            border: 1px solid #344760;
+            background: #091a30;
+            color: var(--white);
+            font: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .rating-options {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 7px;
+        }
+
+        .rating-options input {
+            display: none;
+        }
+
+        .rating-options label {
+            font-size: 35px;
+            color: #667085;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .rating-options label:hover,
+        .rating-options label:hover ~ label,
+        .rating-options input:checked ~ label {
+            color: var(--gold);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #edca79;
+        }
+
+        .notice {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        #formMessage {
+            margin-top: 16px;
+            color: var(--gold);
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 1px solid rgba(214, 173, 85, 0.25);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        @media (max-width: 850px) {
+            .review-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px 18px 55px;
+            }
+
+            .form-card {
+                padding: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">MS. RIYA PRAJAPATI</div>
+
+        <nav>
+            <a href="welcome.html">Welcome</a>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="reviews.html" class="active">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="eyebrow">CLIENT FEEDBACK</div>
+
+        <h1>Every Project <span>Matters.</span></h1>
+
+        <p>
+            Your feedback helps me learn, improve and create
+            better website experiences. If I have worked on your
+            website, I would love to hear your honest feedback.
+        </p>
+    </section>
+
+    <main>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2>Client Reviews</h2>
+                <p>Honest feedback from real projects will appear here.</p>
+            </div>
+
+            <div class="review-grid" id="reviewList">
+                <article class="review-card">
+                    <h3>Reviews Coming Soon</h3>
+                    <p>
+                        Once I receive feedback from clients, their
+                        approved reviews can be displayed here.
+                    </p>
+                </article>
+            </div>
+
+            <p class="demo-note">
+                No customer reviews have been added yet.
+                Reviews submitted through this demo form are not
+                published or saved.
+            </p>
+        </section>
+
+        <section class="section" id="write-review">
+            <div class="section-heading">
+                <h2>Write a Review</h2>
+                <p>
+                    Have worked with me? Share your honest experience.
+                </p>
+            </div>
+
+            <div class="form-card">
+                <h2>Your Feedback</h2>
+
+                <p>
+                    Please submit feedback only for a project or
+                    service you have genuinely experienced.
+                </p>
+
+                <form id="reviewForm">
+
+                    <div class="form-group">
+                        <label for="reviewName">Your Name *</label>
+                        <input
+                            type="text"
+                            id="reviewName"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+
+                        <div class="rating-options">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" title="5 stars">★</label>
+
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" title="4 stars">★</label>
+
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" title="3 stars">★</label>
+
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" title="2 stars">★</label>
+
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" title="1 star">★</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewType">Project Type *</label>
+                        <select id="reviewType" required>
+                            <option value="">Choose project type</option>
+                            <option>Business Website</option>
+                            <option>Portfolio Website</option>
+                            <option>College Website</option>
+                            <option>Online Store</option>
+                            <option>Other Website Project</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewText">Your Review *</label>
+                        <textarea
+                            id="reviewText"
+                            placeholder="Share your honest experience..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Submit Review
+                    </button>
+
+                    <p class="notice">
+                        Demo form only: this page does not store or
+                        publish reviews. A database or review service
+                        must be connected to collect them online.
+                    </p>
+
+                    <p id="formMessage" role="status"></p>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 <span>Ms. Riya Prajapati</span> | Creative Web Studio
+        <br>
+        Designed with creativity and care.
+    </footer>
+
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("reviewName").value.trim();
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const projectType = document.getElementById("reviewType").value;
+            const review = document.getElementById("reviewText").value.trim();
+
+            if (!name || !rating || !projectType || !review) {
+                document.getElementById("formMessage").textContent =
+                    "Please complete all required fields.";
+                return;
+            }
+
+            document.getElementById("formMessage").textContent =
+                "Thank you, " + name +
+                "! Your demo review was checked, but it has not been saved or published. " +
+                "Online review storage will be connected in a future step.";
+
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

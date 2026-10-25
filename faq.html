@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAQs | Ms. Riya Prajapati - Creative Web Studio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #071426;
+            --navy-light: #102541;
+            --gold: #d6ad55;
+            --white: #ffffff;
+            --muted: #b9c4d3;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            gap: 20px;
+            border-bottom: 1px solid rgba(214, 173, 85, 0.3);
+        }
+
+        .brand {
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 17px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 58px);
+            line-height: 1.2;
+            margin: 16px 0;
+        }
+
+        h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 25px 22px 75px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            color: var(--gold);
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .faq-item {
+            background: var(--navy-light);
+            border: 1px solid rgba(214, 173, 85, 0.25);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            border: none;
+            background: transparent;
+            color: var(--white);
+            text-align: left;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            color: var(--gold);
+            font-size: 23px;
+            flex-shrink: 0;
+            transition: transform 0.25s;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            color: var(--muted);
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .contact-cta {
+            text-align: center;
+            background: #0b1c32;
+            border-top: 1px solid rgba(214, 173, 85, 0.2);
+            padding: 55px 20px;
+        }
+
+        .contact-cta h2 {
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .contact-cta p {
+            max-width: 650px;
+            color: var(--muted);
+            margin: 0 auto 22px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #edca79;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 1px solid rgba(214, 173, 85, 0.25);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        @media (max-width: 760px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .faq-section {
+                padding: 20px 16px 55px;
+            }
+
+            .faq-question {
+                padding: 17px;
+                font-size: 14px;
+            }
+
+            .faq-answer {
+                padding: 0 17px 17px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">MS. RIYA PRAJAPATI</div>
+
+        <nav>
+            <a href="welcome.html">Welcome</a>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="faq.html" class="active">FAQs</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+
+        <h1>Got Questions? <span>Find Answers.</span></h1>
+
+        <p>
+            Here are answers to common questions about my website
+            design services and the process of creating a website.
+        </p>
+    </section>
+
+    <main class="faq-section">
+
+        <div class="section-heading">
+            <h2>How Can I Help You?</h2>
+            <p>Click any question below to read its answer.</p>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>1. What types of websites do you create?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                I can work on business websites, personal portfolios,
+                college websites, shop and restaurant websites,
+                fashion and salon websites, real estate websites,
+                landing pages and other custom website projects.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>2. How do I start a website project?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Contact me through the Contact page and explain your
+                idea. We can discuss the purpose of your website,
+                the features you need and the next steps.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>3. Will my website work on mobile phones?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                I aim to create responsive website layouts that
+                adapt to mobile phones, tablets and computer screens.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>4. How long does it take to build a website?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                The time depends on the number of pages, features
+                and design requirements. After discussing your idea,
+                I can give you a more suitable time estimate.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>5. Can I request changes to my website?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Yes, you can discuss the changes you need.
+                The available changes and scope can be agreed upon
+                before the work begins.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>6. Can you create a website for my small business?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Yes. A website can help present your business,
+                services, project details and contact information
+                to potential customers.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>7. Can you add WhatsApp and contact buttons?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Yes. Depending on your requirements, the website
+                can include contact links, call buttons, WhatsApp
+                enquiry links and contact forms.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>8. Can you publish my website online?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                I can discuss suitable publishing options for your
+                project. Domain names, hosting and any related
+                services depend on the requirements.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>9. How can I contact you?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Visit the Contact page on this website to send a
+                project enquiry and share your website idea.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>10. Can I discuss a custom website idea?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Absolutely. Tell me about your idea and the features
+                you need so we can discuss whether the project is
+                suitable for my services.
+            </div>
+        </div>
+
+    </main>
+
+    <section class="contact-cta">
+        <h2>Still Have Questions?</h2>
+        <p>
+            Have a specific idea or need more information?
+            Get in touch and tell me about your project.
+        </p>
+
+        <a href="contact.html" class="contact-btn">
+            Contact Me ↗
+        </a>
+    </section>
+
+    <footer>
+        © 2026 <span>Ms. Riya Prajapati</span> | Creative Web Studio
+        <br>
+        Designed with creativity and care.
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach(function(item) {
+            const question = item.querySelector(".faq-question");
+
+            question.addEventListener("click", function() {
+                const isOpen = item.classList.contains("open");
+
+                faqItems.forEach(function(otherItem) {
+                    otherItem.classList.remove("open");
+                    otherItem.querySelector(".faq-question")
+                        .setAttribute("aria-expanded", "false");
+                });
+
+                if (!isOpen) {
+                    item.classList.add("open");
+                    question.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Ms. Riya Prajapati - Creative Web Studio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #071426;
+            --navy-light: #102541;
+            --gold: #d6ad55;
+            --white: #ffffff;
+            --muted: #b9c4d3;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            border-bottom: 1px solid rgba(214, 173, 85, 0.3);
+            gap: 20px;
+        }
+
+        .brand {
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 50px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(35px, 6vw, 58px);
+            line-height: 1.2;
+            margin: 18px 0;
+        }
+
+        h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 16px;
+        }
+
+        .hero-highlight {
+            color: var(--gold) !important;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-section {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 20px 25px 80px;
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 30px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: var(--navy-light);
+            border: 1px solid rgba(214, 173, 85, 0.25);
+            border-radius: 18px;
+            padding: 32px;
+        }
+
+        h2 {
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-size: 25px;
+        }
+
+        .description {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: var(--white);
+        }
+
+        .services-title {
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .services-list li {
+            color: var(--muted);
+            padding: 7px 0;
+        }
+
+        .services-list li::before {
+            content: "✦ ";
+            color: var(--gold);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #344760;
+            border-radius: 9px;
+            background: #091a30;
+            color: var(--white);
+            font: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--gold);
+        }
+
+        select option {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 18px;
+            border: none;
+            border-radius: 9px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #edca79;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        .bottom-cta {
+            text-align: center;
+            padding: 55px 20px;
+            background: #0b1c32;
+            border-top: 1px solid rgba(214, 173, 85, 0.2);
+        }
+
+        .bottom-cta h2 {
+            font-size: 28px;
+        }
+
+        .bottom-cta p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 10px auto 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 1px solid rgba(214, 173, 85, 0.25);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                padding: 15px 18px 55px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">MS. RIYA PRAJAPATI</div>
+
+        <nav>
+            <a href="welcome.html">Welcome</a>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="eyebrow">LET'S CONNECT</div>
+
+        <h1>
+            Let's Build <span>Something Great.</span>
+        </h1>
+
+        <p>
+            Have a website idea? Let's bring it to life!
+            I create professional, attractive and mobile-friendly
+            websites for different needs and ideas.
+        </p>
+
+        <p class="hero-highlight">
+            Creative Designs. Quality Websites. Made With Care.
+        </p>
+    </section>
+
+    <main class="contact-section">
+
+        <section class="contact-info">
+            <h2>Get In Touch</h2>
+
+            <p class="description">
+                Looking for a website for your business, personal brand
+                or new idea? Tell me what you have in mind, and let's
+                discuss your project.
+            </p>
+
+            <div class="info-item">
+                <strong>✦ Designer</strong>
+                <p>Ms. Riya Prajapati</p>
+            </div>
+
+            <div class="info-item">
+                <strong>✦ Studio</strong>
+                <p>Creative Web Studio</p>
+            </div>
+
+            <div class="info-item">
+                <strong>✦ Website Design</strong>
+                <p>Professional and responsive website designs.</p>
+            </div>
+
+            <h3 class="services-title">Types of Websites I Create</h3>
+
+            <ul class="services-list">
+                <li>Business Websites</li>
+                <li>Personal Portfolio Websites</li>
+                <li>College and Educational Websites</li>
+                <li>Shop and Restaurant Websites</li>
+                <li>Beauty Salon and Fashion Websites</li>
+                <li>Real Estate Websites</li>
+                <li>Landing Pages</li>
+                <li>Online Store Websites</li>
+                <li>Custom Website Projects</li>
+            </ul>
+        </section>
+
+        <section class="contact-form">
+            <h2>Tell Me About Your Project</h2>
+
+            <p class="description">
+                Share a few details about the website you want to create.
+            </p>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Your Phone Number *</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Website Type *</label>
+                    <select id="service" required>
+                        <option value="">Select a website type</option>
+                        <option>Business Website</option>
+                        <option>Personal Portfolio</option>
+                        <option>College or Educational Website</option>
+                        <option>Shop or Restaurant Website</option>
+                        <option>Beauty Salon or Fashion Website</option>
+                        <option>Real Estate Website</option>
+                        <option>Landing Page</option>
+                        <option>Online Store</option>
+                        <option>Other Website</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">Project Details</label>
+                    <textarea
+                        id="details"
+                        placeholder="Tell me about your website idea..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Enquiry on WhatsApp ↗
+                </button>
+
+                <p class="form-note">
+                    Your enquiry will open in WhatsApp so you can
+                    review and send it. This form does not store
+                    submissions on the website.
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <section class="bottom-cta">
+        <h2>Have an Idea? Let's Talk!</h2>
+        <p>
+            Every great website starts with an idea.
+            Get in touch to discuss the website you have in mind.
+        </p>
+    </section>
+
+    <footer>
+        © 2026 <span>Ms. Riya Prajapati</span> | Creative Web Studio
+        <br>
+        Designed with creativity and care.
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const service = document.getElementById("service").value;
+            const details = document.getElementById("details").value.trim();
+
+            if (!name || !phone || !service) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            const message =
+                "Hello Riya! I would like to enquire about a website.\n\n" +
+                "Name: " + name + "\n" +
+                "Phone: " + phone + "\n" +
+                "Website Type: " + service + "\n" +
+                "Project Details: " + (details || "Not provided");
+
+            /*
+              Replace the placeholder below with your chosen WhatsApp
+              number, including country code 91, without + or spaces.
+              Example format: 91XXXXXXXXXX
+            */
+            const whatsappNumber = "919426570574";
+
+            if (whatsappNumber === "919426570574") {
+                alert("Please add your WhatsApp number in the code first.");
+                return;
+            }
+
+            const whatsappURL =
+                "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+
+</body>
+</html>
