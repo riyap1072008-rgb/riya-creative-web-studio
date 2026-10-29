@@ -5,7 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reviews | Ms. Riya Prajapati - Creative Web Studio</title>
+    <title>Client Reviews | Riya Prajapati - Creative Web Studio</title>
+
+    <meta name="description" content="Read client feedback and share your experience with Riya Prajapati's Creative Web Studio. Explore website design and development services.">
+    <meta name="author" content="Riya Prajapati">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#071426">
+
+    <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/reviews.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Client Reviews | Riya Prajapati">
+    <meta property="og:description" content="Share your genuine experience with Riya Prajapati's Creative Web Studio.">
+    <meta property="og:url" content="https://riyap1072008-rgb.github.io/riya-creative-web-studio/reviews.html">
+    <meta property="og:site_name" content="Riya Creative Web Studio">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -20,13 +37,22 @@
             --gold: #d6ad55;
             --white: #ffffff;
             --muted: #b9c4d3;
+            --border: rgba(214, 173, 85, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: "DM Sans", Arial, sans-serif;
             background: var(--navy);
             color: var(--white);
             line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         header {
@@ -35,14 +61,15 @@
             align-items: center;
             padding: 22px 8%;
             gap: 20px;
-            border-bottom: 1px solid rgba(214, 173, 85, 0.3);
+            border-bottom: 1px solid var(--border);
         }
 
         .brand {
             color: var(--gold);
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 700;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         nav {
@@ -53,8 +80,8 @@
 
         nav a {
             color: var(--white);
-            text-decoration: none;
             font-size: 14px;
+            transition: color 0.3s;
         }
 
         nav a:hover,
@@ -65,18 +92,27 @@
         .hero {
             text-align: center;
             padding: 75px 20px 45px;
+            background: radial-gradient(
+                ellipse at top,
+                rgba(214, 173, 85, 0.10),
+                transparent 70%
+            );
         }
 
         .eyebrow {
             color: var(--gold);
             font-size: 12px;
             letter-spacing: 4px;
-            font-weight: bold;
+            font-weight: 700;
+        }
+
+        h1, h2, h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            line-height: 1.3;
         }
 
         h1 {
             font-size: clamp(35px, 6vw, 58px);
-            line-height: 1.2;
             margin: 15px 0;
         }
 
@@ -113,26 +149,22 @@
 
         .review-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
         }
 
         .review-card {
             background: var(--navy-light);
-            border: 1px solid rgba(214, 173, 85, 0.25);
+            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 25px;
-        }
-
-        .stars {
-            color: var(--gold);
-            font-size: 23px;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
+            overflow-wrap: anywhere;
         }
 
         .review-card h3 {
+            color: var(--white);
             margin-bottom: 8px;
+            font-size: 19px;
         }
 
         .review-card p {
@@ -152,7 +184,7 @@
             margin: 0 auto;
             padding: 32px;
             background: var(--navy-light);
-            border: 1px solid rgba(214, 173, 85, 0.3);
+            border: 1px solid var(--border);
             border-radius: 18px;
         }
 
@@ -168,6 +200,7 @@
         label {
             display: block;
             margin-bottom: 7px;
+            font-size: 14px;
         }
 
         input,
@@ -185,8 +218,18 @@
         input:focus,
         select:focus,
         textarea:focus {
-            outline: none;
-            border-color: var(--gold);
+            outline: 2px solid var(--gold);
+            outline-offset: 1px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #aab5c5;
+        }
+
+        select option {
+            background: var(--navy);
+            color: var(--white);
         }
 
         textarea {
@@ -202,7 +245,10 @@
         }
 
         .rating-options input {
-            display: none;
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
         }
 
         .rating-options label {
@@ -218,16 +264,22 @@
             color: var(--gold);
         }
 
+        .rating-options input:focus-visible + label {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
         .submit-btn {
             width: 100%;
             padding: 14px;
             background: var(--gold);
             color: var(--navy);
             font-size: 15px;
-            font-weight: bold;
-            border: none;
+            font-weight: 700;
+            border: 1px solid var(--gold);
             border-radius: 9px;
             cursor: pointer;
+            transition: background 0.3s;
         }
 
         .submit-btn:hover {
@@ -246,10 +298,40 @@
             overflow-wrap: anywhere;
         }
 
+        .bottom-cta {
+            text-align: center;
+            padding: 50px 20px;
+            background: #0b1c32;
+            border-top: 1px solid var(--border);
+        }
+
+        .bottom-cta p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 10px auto 0;
+        }
+
+        .cta-link {
+            display: inline-block;
+            margin: 20px 6px 0;
+            padding: 12px 22px;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .cta-link.outline {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
         footer {
             text-align: center;
             padding: 25px 15px;
-            border-top: 1px solid rgba(214, 173, 85, 0.25);
+            border-top: 1px solid var(--border);
             color: var(--muted);
             font-size: 13px;
         }
@@ -260,7 +342,7 @@
 
         @media (max-width: 850px) {
             .review-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -268,6 +350,7 @@
             header {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px 5%;
             }
 
             nav {
@@ -287,37 +370,47 @@
                 padding: 23px;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 
 <body>
-
     <header>
-        <div class="brand">MS. RIYA PRAJAPATI</div>
+        <a class="brand" href="index.html">RIYA PRAJAPATI</a>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="welcome.html">Welcome</a>
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="portfolio.html">Portfolio</a>
-            <a href="reviews.html" class="active">Reviews</a>
+            <a href="order.html">Order</a>
+            <a href="reviews.html" class="active" aria-current="page">Reviews</a>
+            <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="eyebrow">CLIENT FEEDBACK</div>
-
-        <h1>Every Project <span>Matters.</span></h1>
-
-        <p>
-            Your feedback helps me learn, improve and create
-            better website experiences. If I have worked on your
-            website, I would love to hear your honest feedback.
-        </p>
-    </section>
-
     <main>
+        <section class="hero">
+            <div class="eyebrow">CLIENT FEEDBACK</div>
+
+            <h1>Every Project <span>Matters.</span></h1>
+
+            <p>
+                Your feedback helps me learn, improve and create
+                better website experiences. If I have worked on your
+                website, I would love to hear your honest feedback.
+            </p>
+        </section>
 
         <section class="section">
             <div class="section-heading">
@@ -345,9 +438,7 @@
         <section class="section" id="write-review">
             <div class="section-heading">
                 <h2>Write a Review</h2>
-                <p>
-                    Have worked with me? Share your honest experience.
-                </p>
+                <p>Have worked with me? Share your honest experience.</p>
             </div>
 
             <div class="form-card">
@@ -359,19 +450,22 @@
                 </p>
 
                 <form id="reviewForm">
-
                     <div class="form-group">
                         <label for="reviewName">Your Name *</label>
                         <input
                             type="text"
                             id="reviewName"
+                            name="reviewName"
                             placeholder="Enter your name"
+                            autocomplete="name"
                             required
                         >
                     </div>
 
-                    <div class="form-group">
-                        <label>Your Rating *</label>
+                    <fieldset class="form-group" style="border:0;padding:0">
+                        <legend style="margin-bottom:7px;font-size:14px">
+                            Your Rating *
+                        </legend>
 
                         <div class="rating-options">
                             <input type="radio" id="star5" name="rating" value="5" required>
@@ -389,11 +483,11 @@
                             <input type="radio" id="star1" name="rating" value="1">
                             <label for="star1" title="1 star">★</label>
                         </div>
-                    </div>
+                    </fieldset>
 
                     <div class="form-group">
                         <label for="reviewType">Project Type *</label>
-                        <select id="reviewType" required>
+                        <select id="reviewType" name="reviewType" required>
                             <option value="">Choose project type</option>
                             <option>Business Website</option>
                             <option>Portfolio Website</option>
@@ -407,6 +501,7 @@
                         <label for="reviewText">Your Review *</label>
                         <textarea
                             id="reviewText"
+                            name="reviewText"
                             placeholder="Share your honest experience..."
                             required
                         ></textarea>
@@ -422,21 +517,33 @@
                         must be connected to collect them online.
                     </p>
 
-                    <p id="formMessage" role="status"></p>
-
+                    <p id="formMessage" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
 
+        <section class="bottom-cta">
+            <h2>Want to Build a Website?</h2>
+            <p>
+                Explore the services or contact Riya Prajapati to
+                discuss your website project.
+            </p>
+
+            <a class="cta-link" href="services.html">Explore Services ↗</a>
+            <a class="cta-link outline" href="contact.html">Contact Me ↗</a>
+        </section>
     </main>
 
     <footer>
-        © 2026 <span>Ms. Riya Prajapati</span> | Creative Web Studio
+        © <span id="year"></span> <span>Riya Prajapati</span> | Creative Web Studio
         <br>
         Designed with creativity and care.
     </footer>
 
     <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
         document.getElementById("reviewForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -444,21 +551,20 @@
             const rating = document.querySelector('input[name="rating"]:checked');
             const projectType = document.getElementById("reviewType").value;
             const review = document.getElementById("reviewText").value.trim();
+            const message = document.getElementById("formMessage");
 
             if (!name || !rating || !projectType || !review) {
-                document.getElementById("formMessage").textContent =
-                    "Please complete all required fields.";
+                message.textContent = "Please complete all required fields.";
                 return;
             }
 
-            document.getElementById("formMessage").textContent =
+            message.textContent =
                 "Thank you, " + name +
-                "! Your demo review was checked, but it has not been saved or published. " +
-                "Online review storage will be connected in a future step.";
+                "! This demo form does not save or publish your review. " +
+                "A database must be connected before reviews can be collected online.";
 
             this.reset();
         });
     </script>
-
 </body>
 </html>
