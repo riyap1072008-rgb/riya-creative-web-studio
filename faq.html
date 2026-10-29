@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FAQs | Ms. Riya Prajapati - Creative Web Studio</title>
+    <title>FAQs About Website Design | Riya Prajapati Creative Web Studio</title>
+
+    <meta name="description" content="Find answers to common questions about website design, business websites, responsive layouts, website development, project timelines and publishing by Riya Prajapati Creative Web Studio.">
+
+    <meta name="author" content="Riya Prajapati">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#071426">
+
+    <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/faq.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FAQs | Riya Prajapati Creative Web Studio">
+    <meta property="og:description" content="Learn about website design services, project steps, mobile-friendly websites and how to start your website project.">
+    <meta property="og:url" content="https://riyap1072008-rgb.github.io/riya-creative-web-studio/faq.html">
+    <meta property="og:site_name" content="Riya Prajapati Creative Web Studio">
 
     <style>
         * {
@@ -33,6 +47,12 @@
             line-height: 1.7;
         }
 
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
@@ -47,6 +67,7 @@
             font-size: 18px;
             font-weight: bold;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         nav {
@@ -215,6 +236,7 @@
             header {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px 5%;
             }
 
             nav {
@@ -235,6 +257,22 @@
                 padding: 0 17px 17px;
                 font-size: 14px;
             }
+
+            .hero {
+                padding-top: 55px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
@@ -244,13 +282,14 @@
     <header>
         <div class="brand">MS. RIYA PRAJAPATI</div>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="welcome.html">Welcome</a>
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="portfolio.html">Portfolio</a>
+            <a href="order.html">Order</a>
             <a href="reviews.html">Reviews</a>
-            <a href="faq.html" class="active">FAQs</a>
+            <a href="faq.html" class="active" aria-current="page">FAQs</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
@@ -261,8 +300,9 @@
         <h1>Got Questions? <span>Find Answers.</span></h1>
 
         <p>
-            Here are answers to common questions about my website
-            design services and the process of creating a website.
+            Find answers to common questions about website design,
+            business websites, project timelines and the website
+            development process.
         </p>
     </section>
 
@@ -274,11 +314,13 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-1"
+                aria-expanded="false" aria-controls="answer-1">
                 <span>1. What types of websites do you create?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-1" role="region"
+                aria-labelledby="question-1">
                 I can work on business websites, personal portfolios,
                 college websites, shop and restaurant websites,
                 fashion and salon websites, real estate websites,
@@ -287,11 +329,13 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-2"
+                aria-expanded="false" aria-controls="answer-2">
                 <span>2. How do I start a website project?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-2" role="region"
+                aria-labelledby="question-2">
                 Contact me through the Contact page and explain your
                 idea. We can discuss the purpose of your website,
                 the features you need and the next steps.
@@ -299,22 +343,26 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-3"
+                aria-expanded="false" aria-controls="answer-3">
                 <span>3. Will my website work on mobile phones?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-3" role="region"
+                aria-labelledby="question-3">
                 I aim to create responsive website layouts that
                 adapt to mobile phones, tablets and computer screens.
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-4"
+                aria-expanded="false" aria-controls="answer-4">
                 <span>4. How long does it take to build a website?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-4" role="region"
+                aria-labelledby="question-4">
                 The time depends on the number of pages, features
                 and design requirements. After discussing your idea,
                 I can give you a more suitable time estimate.
@@ -322,11 +370,13 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-5"
+                aria-expanded="false" aria-controls="answer-5">
                 <span>5. Can I request changes to my website?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-5" role="region"
+                aria-labelledby="question-5">
                 Yes, you can discuss the changes you need.
                 The available changes and scope can be agreed upon
                 before the work begins.
@@ -334,11 +384,13 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-6"
+                aria-expanded="false" aria-controls="answer-6">
                 <span>6. Can you create a website for my small business?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-6" role="region"
+                aria-labelledby="question-6">
                 Yes. A website can help present your business,
                 services, project details and contact information
                 to potential customers.
@@ -346,11 +398,13 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-7"
+                aria-expanded="false" aria-controls="answer-7">
                 <span>7. Can you add WhatsApp and contact buttons?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-7" role="region"
+                aria-labelledby="question-7">
                 Yes. Depending on your requirements, the website
                 can include contact links, call buttons, WhatsApp
                 enquiry links and contact forms.
@@ -358,11 +412,13 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-8"
+                aria-expanded="false" aria-controls="answer-8">
                 <span>8. Can you publish my website online?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-8" role="region"
+                aria-labelledby="question-8">
                 I can discuss suitable publishing options for your
                 project. Domain names, hosting and any related
                 services depend on the requirements.
@@ -370,22 +426,26 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-9"
+                aria-expanded="false" aria-controls="answer-9">
                 <span>9. How can I contact you?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-9" role="region"
+                aria-labelledby="question-9">
                 Visit the Contact page on this website to send a
                 project enquiry and share your website idea.
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" id="question-10"
+                aria-expanded="false" aria-controls="answer-10">
                 <span>10. Can I discuss a custom website idea?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer-10" role="region"
+                aria-labelledby="question-10">
                 Absolutely. Tell me about your idea and the features
                 you need so we can discuss whether the project is
                 suitable for my services.
@@ -407,7 +467,8 @@
     </section>
 
     <footer>
-        © 2026 <span>Ms. Riya Prajapati</span> | Creative Web Studio
+        © <span id="current-year">2026</span>
+        <span>Ms. Riya Prajapati</span> | Creative Web Studio
         <br>
         Designed with creativity and care.
     </footer>
@@ -423,6 +484,7 @@
 
                 faqItems.forEach(function(otherItem) {
                     otherItem.classList.remove("open");
+
                     otherItem.querySelector(".faq-question")
                         .setAttribute("aria-expanded", "false");
                 });
@@ -433,6 +495,9 @@
                 }
             });
         });
+
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
     </script>
 
 </body>
