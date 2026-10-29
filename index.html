@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Keep Google Search Console verification -->
     <meta name="google-site-verification" content="CFfFhmhNu58rgSOioVcJqZFAQwEkVXP_q5yhKbbFyDw">
 
+    <!-- SEO -->
     <title>Riya Prajapati | Website Designer &amp; Developer</title>
-    <meta name="description" content="Welcome to Riya Creative Web Studio by Riya Prajapati. Explore website design and development services for businesses, personal portfolios, colleges and brands. Request your website project today.">
+    <meta name="description" content="Looking for a website designer? Riya Prajapati creates responsive websites for businesses, personal portfolios, colleges and brands. Explore website design services and projects.">
     <meta name="author" content="Riya Prajapati">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#071426">
+
     <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/">
 
-    <meta property="og:title" content="Riya Prajapati | Creative Web Studio">
-    <meta property="og:description" content="Need a website for your business, portfolio or brand? Explore website design services by Riya Prajapati.">
+    <!-- Social sharing -->
+    <meta property="og:title" content="Riya Prajapati | Website Designer &amp; Developer">
+    <meta property="og:description" content="Explore responsive website design and development services for businesses, portfolios, colleges and brands.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://riyap1072008-rgb.github.io/riya-creative-web-studio/">
 
@@ -41,7 +46,11 @@
             --shadow: rgba(20, 35, 60, 0.12);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         html {
             scroll-behavior: smooth;
@@ -56,7 +65,9 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        a { color: inherit; }
+        a {
+            color: inherit;
+        }
 
         header {
             position: sticky;
@@ -94,7 +105,10 @@
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--gold); }
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--gold);
+        }
 
         .theme-toggle {
             padding: 8px 12px;
@@ -121,7 +135,9 @@
                 var(--bg);
         }
 
-        .hero-content { max-width: 850px; }
+        .hero-content {
+            max-width: 850px;
+        }
 
         .eyebrow {
             color: var(--gold);
@@ -138,7 +154,10 @@
             margin-bottom: 20px;
         }
 
-        h1 span, h2 span { color: var(--gold); }
+        h1 span,
+        h2 span {
+            color: var(--gold);
+        }
 
         .hero h2 {
             font-size: clamp(24px, 4vw, 34px);
@@ -174,7 +193,9 @@
             background: transparent;
         }
 
-        .button:hover { transform: translateY(-3px); }
+        .button:hover {
+            transform: translateY(-3px);
+        }
 
         .button-primary:hover {
             background: transparent;
@@ -186,9 +207,13 @@
             color: #071426;
         }
 
-        section.content-section { padding: 75px 7%; }
+        section.content-section {
+            padding: 75px 7%;
+        }
 
-        .section-alt { background: var(--surface); }
+        .section-alt {
+            background: var(--surface);
+        }
 
         .section-heading {
             text-align: center;
@@ -262,6 +287,10 @@
             font-size: 13px;
         }
 
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
         .process {
             max-width: 900px;
             margin: auto;
@@ -275,6 +304,7 @@
             padding: 25px 18px;
             border: 1px solid var(--border);
             border-radius: 12px;
+            background: var(--card);
         }
 
         .process-number {
@@ -315,7 +345,9 @@
             font-size: 13px;
         }
 
-        footer span { color: var(--gold); }
+        footer span {
+            color: var(--gold);
+        }
 
         .floating-contact {
             position: fixed;
@@ -332,24 +364,79 @@
             box-shadow: 0 5px 20px var(--shadow);
         }
 
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+        }
+
         @media (max-width: 850px) {
-            header { justify-content: center; }
-            .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .hero { min-height: auto; padding: 75px 7%; }
+            header {
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 75px 7%;
+            }
         }
 
         @media (max-width: 560px) {
-            header { padding: 15px 4%; }
-            nav { gap: 12px; }
-            nav a { font-size: 12px; }
-            .brand { width: 100%; text-align: center; }
+            header {
+                padding: 15px 4%;
+            }
 
-            .grid, .process { grid-template-columns: 1fr; }
+            nav {
+                gap: 12px;
+            }
 
-            section.content-section { padding: 55px 5%; }
+            nav a {
+                font-size: 12px;
+            }
 
-            .hero p.description { font-size: 15px; }
-            .about-box { padding: 22px; }
+            .brand {
+                width: 100%;
+                text-align: center;
+            }
+
+            .grid,
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            section.content-section {
+                padding: 55px 5%;
+            }
+
+            .hero p.description {
+                font-size: 15px;
+            }
+
+            .about-box {
+                padding: 22px;
+            }
+
+            .floating-contact {
+                right: 12px;
+                bottom: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
@@ -366,7 +453,8 @@
             <a href="order.html">Order Website</a>
             <a href="contact.html">Contact</a>
 
-            <button id="themeToggle" class="theme-toggle" type="button">
+            <button id="themeToggle" class="theme-toggle" type="button"
+                    aria-label="Switch website colour theme">
                 ☀️ Light Mode
             </button>
         </nav>
@@ -440,42 +528,42 @@
 
             <div class="grid">
                 <article class="item-card">
-                    <div class="item-icon">🌐</div>
+                    <div class="item-icon" aria-hidden="true">🌐</div>
                     <h3>Business Website Design</h3>
                     <p>Professional websites to present your business, services and contact information.</p>
                     <a href="services.html" class="text-link">Learn More ↗</a>
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">👩‍💻</div>
+                    <div class="item-icon" aria-hidden="true">👩‍💻</div>
                     <h3>Personal Portfolio Websites</h3>
                     <p>Showcase your skills, projects and achievements with a personal portfolio.</p>
                     <a href="services.html" class="text-link">Learn More ↗</a>
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">🎓</div>
+                    <div class="item-icon" aria-hidden="true">🎓</div>
                     <h3>College &amp; Education Websites</h3>
                     <p>Present courses, facilities, announcements and useful education information.</p>
                     <a href="services.html" class="text-link">Learn More ↗</a>
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">🛍️</div>
+                    <div class="item-icon" aria-hidden="true">🛍️</div>
                     <h3>Product &amp; Shop Pages</h3>
                     <p>Display products, services and important business details in an organized layout.</p>
                     <a href="services.html" class="text-link">Learn More ↗</a>
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">📱</div>
+                    <div class="item-icon" aria-hidden="true">📱</div>
                     <h3>Mobile-Friendly Website Design</h3>
                     <p>Responsive layouts designed for mobile phones, tablets and desktop screens.</p>
                     <a href="services.html" class="text-link">Learn More ↗</a>
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">✨</div>
+                    <div class="item-icon" aria-hidden="true">✨</div>
                     <h3>Custom Landing Pages</h3>
                     <p>Focused pages for projects, promotions and specific business goals.</p>
                     <a href="services.html" class="text-link">Learn More ↗</a>
@@ -486,13 +574,13 @@
         <section class="content-section" id="projects">
             <div class="section-heading">
                 <p class="eyebrow">Selected Work</p>
-                <h2>Featured <span>Project</span></h2>
+                <h2>Featured <span>Projects</span></h2>
                 <p>Explore website projects and examples of my work.</p>
             </div>
 
             <div class="grid">
                 <article class="item-card">
-                    <div class="item-icon">⚡</div>
+                    <div class="item-icon" aria-hidden="true">⚡</div>
                     <h3>Brahmani Electrical Works Website</h3>
                     <p>A local electrical services website presenting services and helping customers make contact.</p>
                     <a href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
@@ -502,14 +590,14 @@
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">💼</div>
+                    <div class="item-icon" aria-hidden="true">💼</div>
                     <h3>Creative Portfolio</h3>
                     <p>A portfolio for showcasing web design projects, skills and creative ideas.</p>
                     <a href="portfolio.html" class="text-link">View Portfolio ↗</a>
                 </article>
 
                 <article class="item-card">
-                    <div class="item-icon">🚀</div>
+                    <div class="item-icon" aria-hidden="true">🚀</div>
                     <h3>Your Website Project</h3>
                     <p>Need a website for your business, personal brand or project? Share your requirements.</p>
                     <a href="order.html" class="text-link">Start a Project ↗</a>
@@ -560,15 +648,23 @@
         <p>Website Design · Responsive Layouts · Creative Digital Projects</p>
     </footer>
 
-    <a href="contact.html" class="floating-contact">Contact ↗</a>
+    <a href="contact.html" class="floating-contact" aria-label="Contact Riya Prajapati">
+        Contact ↗
+    </a>
 
     <script>
         const themeToggle = document.getElementById("themeToggle");
 
         function applyTheme(theme) {
             document.body.classList.toggle("light-mode", theme === "light");
+
             themeToggle.textContent =
                 theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+
+            themeToggle.setAttribute(
+                "aria-label",
+                theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+            );
         }
 
         try {
@@ -591,7 +687,8 @@
             }
         });
 
-        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
     </script>
 </body>
 </html>
