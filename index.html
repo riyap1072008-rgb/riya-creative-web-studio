@@ -1,7 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="CFfFhmhNu58rgSOioVcJqZFAQwEkVXP_q5yhKbbFyDw" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="CFfFhmhNu58rgSOioVcJqZFAQwEkVXP_q5yhKbbFyDw">
+
+    <title>Riya Prajapati | Website Designer &amp; Developer</title>
+    <meta name="description" content="Welcome to Riya Creative Web Studio by Riya Prajapati. Explore website design and development services for businesses, personal portfolios, colleges and brands. Request your website project today.">
+    <meta name="author" content="Riya Prajapati">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/">
+
+    <meta property="og:title" content="Riya Prajapati | Creative Web Studio">
+    <meta property="og:description" content="Need a website for your business, portfolio or brand? Explore website design services by Riya Prajapati.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://riyap1072008-rgb.github.io/riya-creative-web-studio/">
 
     <style>
         :root {
@@ -26,11 +41,7 @@
             --shadow: rgba(20, 35, 60, 0.12);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html {
             scroll-behavior: smooth;
@@ -45,9 +56,7 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        a {
-            color: inherit;
-        }
+        a { color: inherit; }
 
         header {
             position: sticky;
@@ -85,9 +94,7 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--gold);
-        }
+        nav a:hover { color: var(--gold); }
 
         .theme-toggle {
             padding: 8px 12px;
@@ -114,9 +121,7 @@
                 var(--bg);
         }
 
-        .hero-content {
-            max-width: 850px;
-        }
+        .hero-content { max-width: 850px; }
 
         .eyebrow {
             color: var(--gold);
@@ -133,9 +138,11 @@
             margin-bottom: 20px;
         }
 
-        h1 span,
-        h2 span {
-            color: var(--gold);
+        h1 span, h2 span { color: var(--gold); }
+
+        .hero h2 {
+            font-size: clamp(24px, 4vw, 34px);
+            margin-bottom: 15px;
         }
 
         .hero p.description {
@@ -167,9 +174,7 @@
             background: transparent;
         }
 
-        .button:hover {
-            transform: translateY(-3px);
-        }
+        .button:hover { transform: translateY(-3px); }
 
         .button-primary:hover {
             background: transparent;
@@ -181,13 +186,9 @@
             color: #071426;
         }
 
-        section.content-section {
-            padding: 75px 7%;
-        }
+        section.content-section { padding: 75px 7%; }
 
-        .section-alt {
-            background: var(--surface);
-        }
+        .section-alt { background: var(--surface); }
 
         .section-heading {
             text-align: center;
@@ -314,9 +315,7 @@
             font-size: 13px;
         }
 
-        footer span {
-            color: var(--gold);
-        }
+        footer span { color: var(--gold); }
 
         .floating-contact {
             position: fixed;
@@ -334,64 +333,30 @@
         }
 
         @media (max-width: 850px) {
-            header {
-                justify-content: center;
-            }
-
-            .grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 75px 7%;
-            }
+            header { justify-content: center; }
+            .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .hero { min-height: auto; padding: 75px 7%; }
         }
 
         @media (max-width: 560px) {
-            header {
-                padding: 15px 4%;
-            }
+            header { padding: 15px 4%; }
+            nav { gap: 12px; }
+            nav a { font-size: 12px; }
+            .brand { width: 100%; text-align: center; }
 
-            nav {
-                gap: 12px;
-            }
+            .grid, .process { grid-template-columns: 1fr; }
 
-            nav a {
-                font-size: 12px;
-            }
+            section.content-section { padding: 55px 5%; }
 
-            .brand {
-                width: 100%;
-                text-align: center;
-            }
-
-            .grid,
-            .process {
-                grid-template-columns: 1fr;
-            }
-
-            section.content-section {
-                padding: 55px 5%;
-            }
-
-            .hero p.description {
-                font-size: 15px;
-            }
-
-            .about-box {
-                padding: 22px;
-            }
+            .hero p.description { font-size: 15px; }
+            .about-box { padding: 22px; }
         }
     </style>
 </head>
 
 <body>
-
     <header>
-        <a href="index.html" class="brand">
-            MS. RIYA PRAJAPATI
-        </a>
+        <a href="index.html" class="brand">MS. RIYA PRAJAPATI</a>
 
         <nav aria-label="Main navigation">
             <a href="#home">Home</a>
@@ -401,315 +366,232 @@
             <a href="order.html">Order Website</a>
             <a href="contact.html">Contact</a>
 
-            <button
-                id="themeToggle"
-                class="theme-toggle"
-                type="button"
-            >
+            <button id="themeToggle" class="theme-toggle" type="button">
                 ☀️ Light Mode
             </button>
         </nav>
     </header>
 
-    <!-- HOME -->
-    <section class="hero" id="home">
-        <div class="hero-content">
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">Website Design &amp; Development Services</p>
 
-            <p class="eyebrow">Worldwide Web Design</p>
+                <h1>Hi, I'm <span>Riya Prajapati</span></h1>
 
-            <h1>
-                Hi, I'm <span>Riya Prajapati</span>
-            </h1>
+                <h2>Creative Web Studio</h2>
 
-            <h2>Creative Web Studio</h2>
-
-            <p class="description">
-                I design modern, attractive and responsive websites
-                for businesses, personal brands, colleges and creative
-                projects. Let's turn your ideas into a beautiful
-                online presence.
-            </p>
-
-            <a href="portfolio.html" class="button button-primary">
-                Explore My Work ↗
-            </a>
-
-            <a href="order.html" class="button button-secondary">
-                Order Your Website
-            </a>
-
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="content-section" id="about">
-        <div class="section-heading">
-            <p class="eyebrow">Get To Know Me</p>
-            <h2>About <span>Me</span></h2>
-            <p>A creative approach to building websites.</p>
-        </div>
-
-        <div class="about-box">
-            <p>
-                Welcome to Ms. Riya Prajapati — Creative Web Studio.
-                I am developing my skills in website design and
-                front-end development, with a focus on attractive
-                layouts and user-friendly experiences.
-            </p>
-
-            <p>
-                My goal is to help individuals and businesses build
-                an online presence with websites that look professional
-                on both mobile phones and computers.
-            </p>
-
-            <p>
-                Every project begins with understanding the client's
-                needs, planning the design and creating a website
-                suited to the project.
-            </p>
-
-            <a href="contact.html" class="text-link">
-                Let's Connect ↗
-            </a>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="content-section section-alt" id="services">
-        <div class="section-heading">
-            <p class="eyebrow">What I Can Create</p>
-            <h2>My <span>Services</span></h2>
-            <p>Website solutions for different ideas and needs.</p>
-        </div>
-
-        <div class="grid">
-
-            <article class="item-card">
-                <div class="item-icon">🌐</div>
-                <h3>Business Websites</h3>
-                <p>
-                    Professional websites to introduce your business,
-                    services and contact information.
-                </p>
-                <a href="services.html" class="text-link">Learn More ↗</a>
-            </article>
-
-            <article class="item-card">
-                <div class="item-icon">👩‍💻</div>
-                <h3>Personal Portfolios</h3>
-                <p>
-                    Showcase your skills, projects and achievements
-                    in a personal portfolio.
-                </p>
-                <a href="services.html" class="text-link">Learn More ↗</a>
-            </article>
-
-            <article class="item-card">
-                <div class="item-icon">🎓</div>
-                <h3>College Websites</h3>
-                <p>
-                    Present courses, facilities, announcements
-                    and useful college information.
-                </p>
-                <a href="services.html" class="text-link">Learn More ↗</a>
-            </article>
-
-            <article class="item-card">
-                <div class="item-icon">🛍️</div>
-                <h3>Shop & Product Pages</h3>
-                <p>
-                    Display products, services and important
-                    details in an organized layout.
-                </p>
-                <a href="services.html" class="text-link">Learn More ↗</a>
-            </article>
-
-            <article class="item-card">
-                <div class="item-icon">📱</div>
-                <h3>Responsive Design</h3>
-                <p>
-                    Designs that adapt to mobile phones,
-                    tablets and desktop screens.
-                </p>
-                <a href="services.html" class="text-link">Learn More ↗</a>
-            </article>
-
-            <article class="item-card">
-                <div class="item-icon">✨</div>
-                <h3>Custom Landing Pages</h3>
-                <p>
-                    Focused pages for projects, promotions
-                    and specific business goals.
-                </p>
-                <a href="services.html" class="text-link">Learn More ↗</a>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- FEATURED PROJECT -->
-    <section class="content-section" id="projects">
-        <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2>Featured <span>Project</span></h2>
-            <p>Explore a website project I've worked on.</p>
-        </div>
-
-        <div class="grid">
-
-            <article class="item-card">
-                <div class="item-icon">⚡</div>
-                <h3>Brahmani Electrical Works</h3>
-                <p>
-                    A local electrical services website for presenting
-                    services and helping customers make contact.
+                <p class="description">
+                    Looking for a website designer or website developer?
+                    I create modern, attractive and responsive websites
+                    for businesses, personal brands, colleges and creative
+                    projects. Explore my work and share your website idea.
                 </p>
 
-                <a
-                    href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
-                    class="text-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Visit Live Website ↗
+                <a href="portfolio.html" class="button button-primary">
+                    Explore My Work ↗
                 </a>
-            </article>
 
-            <article class="item-card">
-                <div class="item-icon">💼</div>
-                <h3>Creative Portfolio</h3>
-                <p>
-                    A space to showcase web design projects,
-                    skills and creative ideas.
-                </p>
-
-                <a href="portfolio.html" class="text-link">
-                    View Portfolio ↗
+                <a href="order.html" class="button button-secondary">
+                    Order Your Website
                 </a>
-            </article>
+            </div>
+        </section>
 
-            <article class="item-card">
-                <div class="item-icon">🚀</div>
-                <h3>Your Next Project</h3>
+        <section class="content-section" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">Get To Know Me</p>
+                <h2>About <span>Me</span></h2>
+                <p>Creative website design for businesses and individuals.</p>
+            </div>
+
+            <div class="about-box">
                 <p>
-                    Have a website idea? Let's discuss what
-                    you want to create.
+                    Welcome to Ms. Riya Prajapati — Creative Web Studio.
+                    I am developing my skills in website design and
+                    front-end development, with a focus on attractive
+                    layouts and user-friendly experiences.
                 </p>
 
-                <a href="order.html" class="text-link">
-                    Start a Project ↗
-                </a>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="content-section section-alt" id="process">
-        <div class="section-heading">
-            <p class="eyebrow">How It Works</p>
-            <h2>My Working <span>Process</span></h2>
-            <p>Three simple steps to get started.</p>
-        </div>
-
-        <div class="process">
-
-            <article class="process-card">
-                <div class="process-number">01</div>
-                <h3>Understand</h3>
                 <p>
-                    We discuss your idea, audience
-                    and website requirements.
+                    I create websites for individuals and businesses
+                    looking to build an online presence. My projects
+                    focus on clear information, responsive layouts and
+                    a design suited to the client's needs.
                 </p>
-            </article>
 
-            <article class="process-card">
-                <div class="process-number">02</div>
-                <h3>Design</h3>
                 <p>
-                    We plan the layout, colours
-                    and content for your project.
+                    Website services include business websites, personal
+                    portfolios, college websites, product pages and
+                    custom landing pages. Project details, features,
+                    pricing and timelines are discussed before work begins.
                 </p>
-            </article>
 
-            <article class="process-card">
-                <div class="process-number">03</div>
-                <h3>Build</h3>
-                <p>
-                    The website is developed and
-                    checked before publication.
-                </p>
-            </article>
+                <a href="contact.html" class="text-link">Let's Connect ↗</a>
+            </div>
+        </section>
 
-        </div>
-    </section>
+        <section class="content-section section-alt" id="services">
+            <div class="section-heading">
+                <p class="eyebrow">What I Can Create</p>
+                <h2>My <span>Services</span></h2>
+                <p>Website design and development for different needs.</p>
+            </div>
 
-    <!-- CONTACT CTA -->
-    <section class="cta" id="contact">
-        <p class="eyebrow">Your Idea Starts Here</p>
+            <div class="grid">
+                <article class="item-card">
+                    <div class="item-icon">🌐</div>
+                    <h3>Business Website Design</h3>
+                    <p>Professional websites to present your business, services and contact information.</p>
+                    <a href="services.html" class="text-link">Learn More ↗</a>
+                </article>
 
-        <h2>Ready to Build Your <span>Website?</span></h2>
+                <article class="item-card">
+                    <div class="item-icon">👩‍💻</div>
+                    <h3>Personal Portfolio Websites</h3>
+                    <p>Showcase your skills, projects and achievements with a personal portfolio.</p>
+                    <a href="services.html" class="text-link">Learn More ↗</a>
+                </article>
 
-        <p>
-            Tell me about your project and let's discuss
-            the next steps.
-        </p>
+                <article class="item-card">
+                    <div class="item-icon">🎓</div>
+                    <h3>College &amp; Education Websites</h3>
+                    <p>Present courses, facilities, announcements and useful education information.</p>
+                    <a href="services.html" class="text-link">Learn More ↗</a>
+                </article>
 
-        <a href="order.html" class="button button-primary">
-            Order Your Website ↗
-        </a>
+                <article class="item-card">
+                    <div class="item-icon">🛍️</div>
+                    <h3>Product &amp; Shop Pages</h3>
+                    <p>Display products, services and important business details in an organized layout.</p>
+                    <a href="services.html" class="text-link">Learn More ↗</a>
+                </article>
 
-        <a href="contact.html" class="button button-secondary">
-            Contact Me
-        </a>
-    </section>
+                <article class="item-card">
+                    <div class="item-icon">📱</div>
+                    <h3>Mobile-Friendly Website Design</h3>
+                    <p>Responsive layouts designed for mobile phones, tablets and desktop screens.</p>
+                    <a href="services.html" class="text-link">Learn More ↗</a>
+                </article>
+
+                <article class="item-card">
+                    <div class="item-icon">✨</div>
+                    <h3>Custom Landing Pages</h3>
+                    <p>Focused pages for projects, promotions and specific business goals.</p>
+                    <a href="services.html" class="text-link">Learn More ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" id="projects">
+            <div class="section-heading">
+                <p class="eyebrow">Selected Work</p>
+                <h2>Featured <span>Project</span></h2>
+                <p>Explore website projects and examples of my work.</p>
+            </div>
+
+            <div class="grid">
+                <article class="item-card">
+                    <div class="item-icon">⚡</div>
+                    <h3>Brahmani Electrical Works Website</h3>
+                    <p>A local electrical services website presenting services and helping customers make contact.</p>
+                    <a href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
+                       class="text-link" target="_blank" rel="noopener noreferrer">
+                        Visit Live Website ↗
+                    </a>
+                </article>
+
+                <article class="item-card">
+                    <div class="item-icon">💼</div>
+                    <h3>Creative Portfolio</h3>
+                    <p>A portfolio for showcasing web design projects, skills and creative ideas.</p>
+                    <a href="portfolio.html" class="text-link">View Portfolio ↗</a>
+                </article>
+
+                <article class="item-card">
+                    <div class="item-icon">🚀</div>
+                    <h3>Your Website Project</h3>
+                    <p>Need a website for your business, personal brand or project? Share your requirements.</p>
+                    <a href="order.html" class="text-link">Start a Project ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section section-alt" id="process">
+            <div class="section-heading">
+                <p class="eyebrow">How It Works</p>
+                <h2>My Working <span>Process</span></h2>
+                <p>Three simple steps to get started.</p>
+            </div>
+
+            <div class="process">
+                <article class="process-card">
+                    <div class="process-number">01</div>
+                    <h3>Understand</h3>
+                    <p>We discuss your idea, audience and website requirements.</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-number">02</div>
+                    <h3>Design</h3>
+                    <p>We plan the layout, colours and content for your project.</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="process-number">03</div>
+                    <h3>Build</h3>
+                    <p>The website is developed and checked before publication.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            <p class="eyebrow">Your Idea Starts Here</p>
+            <h2>Ready to Build Your <span>Website?</span></h2>
+            <p>Tell me about your project and let's discuss the next steps.</p>
+
+            <a href="order.html" class="button button-primary">Order Your Website ↗</a>
+            <a href="contact.html" class="button button-secondary">Contact Me</a>
+        </section>
+    </main>
 
     <footer>
-        <p>
-            © <span id="year"></span>
-            <span>Ms. Riya Prajapati</span> — Creative Web Studio.
-        </p>
-
-        <p>Creative Ideas · Modern Design · Digital Future</p>
+        <p>© <span id="year"></span> <span>Ms. Riya Prajapati</span> — Creative Web Studio.</p>
+        <p>Website Design · Responsive Layouts · Creative Digital Projects</p>
     </footer>
 
-    <a href="contact.html" class="floating-contact">
-        Contact ↗
-    </a>
+    <a href="contact.html" class="floating-contact">Contact ↗</a>
 
     <script>
-        // Dark / Light Mode
         const themeToggle = document.getElementById("themeToggle");
 
         function applyTheme(theme) {
-            document.body.classList.toggle(
-                "light-mode",
-                theme === "light"
-            );
-
+            document.body.classList.toggle("light-mode", theme === "light");
             themeToggle.textContent =
                 theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
         }
 
-        const savedTheme = localStorage.getItem("riyaTheme");
-
-        applyTheme(savedTheme === "light" ? "light" : "dark");
+        try {
+            const savedTheme = localStorage.getItem("riyaTheme");
+            applyTheme(savedTheme === "light" ? "light" : "dark");
+        } catch (error) {
+            applyTheme("dark");
+        }
 
         themeToggle.addEventListener("click", function () {
             const newTheme =
-                document.body.classList.contains("light-mode")
-                    ? "dark"
-                    : "light";
+                document.body.classList.contains("light-mode") ? "dark" : "light";
 
             applyTheme(newTheme);
-            localStorage.setItem("riyaTheme", newTheme);
+
+            try {
+                localStorage.setItem("riyaTheme", newTheme);
+            } catch (error) {
+                // Theme switching still works if storage is unavailable.
+            }
         });
 
-        // Automatic current year
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
