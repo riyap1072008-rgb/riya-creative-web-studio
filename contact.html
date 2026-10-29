@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Website Designer | Riya Prajapati - Creative Web Studio</title>
+    <title>Contact Website Designer | Riya Prajapati</title>
 
-    <meta name="description" content="Contact Riya Prajapati at Creative Web Studio for business websites, personal portfolios, college websites, responsive web design and custom website projects.">
-
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Contact Riya Prajapati for responsive website design, business websites, personal portfolios, college websites and custom website projects.">
     <meta name="author" content="Riya Prajapati">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#071426">
 
     <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/contact.html">
@@ -38,10 +37,12 @@
             --gold: #d6ad55;
             --white: #ffffff;
             --muted: #b9c4d3;
+            --border: rgba(214, 173, 85, 0.3);
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 20px;
         }
 
         body {
@@ -52,7 +53,17 @@
         }
 
         a {
+            color: inherit;
             text-decoration: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
         }
 
         header {
@@ -60,7 +71,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 22px 8%;
-            border-bottom: 1px solid rgba(214, 173, 85, 0.3);
+            border-bottom: 1px solid var(--border);
             gap: 20px;
         }
 
@@ -144,7 +155,7 @@
         .contact-info,
         .contact-form {
             background: var(--navy-light);
-            border: 1px solid rgba(214, 173, 85, 0.25);
+            border: 1px solid var(--border);
             border-radius: 18px;
             padding: 32px;
             min-width: 0;
@@ -228,7 +239,6 @@
             background: #091a30;
             color: var(--white);
             font: inherit;
-            outline: none;
         }
 
         input:focus,
@@ -280,7 +290,7 @@
             text-align: center;
             padding: 55px 20px;
             background: #0b1c32;
-            border-top: 1px solid rgba(214, 173, 85, 0.2);
+            border-top: 1px solid var(--border);
         }
 
         .bottom-cta h2 {
@@ -295,7 +305,7 @@
 
         .bottom-cta a {
             display: inline-block;
-            margin-top: 20px;
+            margin: 20px 5px 0;
             padding: 12px 22px;
             background: var(--gold);
             color: var(--navy);
@@ -304,10 +314,16 @@
             font-size: 14px;
         }
 
+        .bottom-cta a.outline {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
         footer {
             text-align: center;
             padding: 25px 15px;
-            border-top: 1px solid rgba(214, 173, 85, 0.25);
+            border-top: 1px solid var(--border);
             color: var(--muted);
             font-size: 13px;
         }
@@ -352,17 +368,15 @@
 </head>
 
 <body>
-
     <header>
-        <a class="brand" href="index.html">
-            RIYA PRAJAPATI
-        </a>
+        <a class="brand" href="index.html">RIYA PRAJAPATI</a>
 
         <nav aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
             <a href="services.html">Services</a>
             <a href="portfolio.html">Portfolio</a>
+            <a href="order.html">Order Website</a>
             <a href="contact.html" class="active" aria-current="page">Contact</a>
         </nav>
     </header>
@@ -371,9 +385,7 @@
         <section class="hero">
             <div class="eyebrow">LET'S CONNECT</div>
 
-            <h1>
-                Contact Your <span>Website Designer.</span>
-            </h1>
+            <h1>Contact Your <span>Website Designer.</span></h1>
 
             <p>
                 I'm Riya Prajapati from Creative Web Studio. I create
@@ -388,7 +400,6 @@
         </section>
 
         <section class="contact-section" aria-label="Contact details and website enquiry form">
-
             <section class="contact-info">
                 <h2>Get In Touch</h2>
 
@@ -409,7 +420,7 @@
                 </div>
 
                 <div class="info-item">
-                    <strong>✦ Website Design & Development</strong>
+                    <strong>✦ Website Design &amp; Development</strong>
                     <p>
                         Website layouts, responsive pages, clear content
                         and enquiry links based on project requirements.
@@ -444,7 +455,6 @@
                 </p>
 
                 <form id="contactForm">
-
                     <div class="form-group">
                         <label for="name">Your Name *</label>
                         <input
@@ -505,10 +515,8 @@
                         Your message will be prepared in WhatsApp, where you
                         can review and send it yourself.
                     </p>
-
                 </form>
             </section>
-
         </section>
 
         <section class="bottom-cta">
@@ -521,16 +529,20 @@
             </p>
 
             <a href="services.html">View My Services ↗</a>
+            <a href="order.html" class="outline">Order a Website ↗</a>
         </section>
     </main>
 
     <footer>
-        © 2026 <span>Riya Prajapati</span> | Creative Web Studio
+        © <span id="year"></span> <span>Riya Prajapati</span> | Creative Web Studio
         <br>
-        Website Design & Development
+        Website Design &amp; Development
     </footer>
 
     <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -545,11 +557,17 @@
             }
 
             /*
-              Use your own WhatsApp number here:
-              India country code + 10-digit number, without + or spaces.
-              Example: 919428570574
+              IMPORTANT:
+              Replace this placeholder with your own WhatsApp number.
+              Format: country code + phone number, digits only.
+              Example format for India: 91 followed by 10 digits.
             */
-            const whatsappNumber = "919428570574";
+            const whatsappNumber = "REPLACE_WITH_YOUR_NUMBER";
+
+            if (!/^\d{10,15}$/.test(whatsappNumber)) {
+                alert("Please set your correct WhatsApp number in the code before using this form.");
+                return;
+            }
 
             const message =
                 "Hello Riya! I would like to enquire about a website.\n\n" +
@@ -565,6 +583,5 @@
             window.open(whatsappURL, "_blank", "noopener,noreferrer");
         });
     </script>
-
 </body>
 </html>
