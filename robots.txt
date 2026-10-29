@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://riyap1072008-rgb.github.io/riya-creative-web-studio/sitemap.xml
