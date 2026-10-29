@@ -5,8 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My Portfolio | MS. Riya Prajapati — Creative Web Studio</title>
-  <meta name="description" content="Explore seven website projects by MS. Riya Prajapati Creative Web Studio.">
+  <title>Website Design Portfolio | Riya Prajapati</title>
+
+  <meta name="description" content="Explore Riya Prajapati's website design portfolio, including business website design, educational projects and creative website concepts.">
+
+  <meta name="author" content="Riya Prajapati">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#071426">
+
+  <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/portfolio.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Website Design Portfolio | Riya Prajapati">
+  <meta property="og:description" content="Explore live website work, educational projects and creative website concepts by Riya Prajapati.">
+  <meta property="og:url" content="https://riyap1072008-rgb.github.io/riya-creative-web-studio/portfolio.html">
+  <meta property="og:site_name" content="Riya Creative Web Studio">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +108,11 @@
     .hero {
       padding: 90px 0 65px;
       text-align: center;
-      background: radial-gradient(ellipse at top, #1a2c43, transparent 70%);
+      background: radial-gradient(
+        ellipse at top,
+        #1a2c43,
+        transparent 70%
+      );
     }
 
     .eyebrow {
@@ -256,8 +273,9 @@
       padding: 5px 11px;
       border: 1px solid var(--border);
       border-radius: 20px;
-      color: var(--muted);
+      color: var(--gold);
       font-size: 11px;
+      font-weight: 600;
     }
 
     .project-link {
@@ -267,6 +285,30 @@
       font-weight: 700;
       border-bottom: 1px solid var(--gold);
       padding-bottom: 3px;
+    }
+
+    .project-link:hover {
+      color: #f0d59b;
+    }
+
+    .project-link:focus-visible,
+    nav a:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .transparency-note {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(217, 182, 109, 0.07);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .transparency-note strong {
+      color: var(--gold);
     }
 
     .cta {
@@ -377,7 +419,7 @@
   <header>
     <div class="container navbar">
       <a class="brand" href="index.html">
-        MS. RIYA PRAJAPATI
+        RIYA PRAJAPATI
         <span>CREATIVE WEB STUDIO</span>
       </a>
 
@@ -385,8 +427,8 @@
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
         <a href="services.html">Services</a>
-        <a class="active" href="portfolio.html">Portfolio</a>
-        <a href="index.html#contact">Contact</a>
+        <a class="active" href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -395,11 +437,15 @@
     <section class="hero">
       <div class="container">
         <div class="eyebrow">✦ My Creative Journey</div>
+
         <h1>My Work, My <span>Creativity.</span></h1>
+
         <p>
-          Every project is a new opportunity to learn, design and grow.
-          Explore my website projects and creative concepts.
+          Every project is an opportunity to learn, design and grow.
+          Explore my website projects, educational work and creative
+          concepts for different types of businesses.
         </p>
+
         <div class="project-count">7 Website Projects</div>
       </div>
     </section>
@@ -420,11 +466,15 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">01 / Fashion</div>
               <h2>Riya Fashion Store</h2>
-              <p>A fashion website concept to showcase collections, clothing styles and product information.</p>
-              <span class="status">Website Project</span>
+              <p>
+                A fashion website concept designed to showcase clothing
+                collections, styles and product information.
+              </p>
+              <span class="status">Concept Project</span>
             </div>
           </article>
 
@@ -440,11 +490,15 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">02 / Restaurant</div>
               <h2>Royal Restaurant</h2>
-              <p>A restaurant website concept for showcasing the menu, dining experience and restaurant details.</p>
-              <span class="status">Website Project</span>
+              <p>
+                A restaurant website concept for presenting menu
+                highlights, dining information and restaurant details.
+              </p>
+              <span class="status">Concept Project</span>
             </div>
           </article>
 
@@ -460,11 +514,15 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">03 / Beauty</div>
               <h2>Royal Beauty Salon</h2>
-              <p>An elegant salon website concept to display beauty services, treatments and contact details.</p>
-              <span class="status">Website Project</span>
+              <p>
+                An elegant salon website concept for displaying beauty
+                services, treatments and contact information.
+              </p>
+              <span class="status">Concept Project</span>
             </div>
           </article>
 
@@ -480,11 +538,15 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">04 / Real Estate</div>
               <h2>Royal Estate</h2>
-              <p>A real estate website concept for presenting properties and property information.</p>
-              <span class="status">Website Project</span>
+              <p>
+                A real estate website concept for showcasing properties,
+                property details and enquiry information.
+              </p>
+              <span class="status">Concept Project</span>
             </div>
           </article>
 
@@ -500,11 +562,15 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">05 / Technology</div>
               <h2>TechZone Electronics</h2>
-              <p>A technology website concept for showcasing electronic products and gadgets.</p>
-              <span class="status">Website Project</span>
+              <p>
+                An electronics website concept for presenting product
+                categories, gadgets and electronic products.
+              </p>
+              <span class="status">Concept Project</span>
             </div>
           </article>
 
@@ -520,11 +586,16 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">06 / Education</div>
               <h2>Narmada College of Science and Commerce</h2>
-              <p>An educational website project featuring college information, courses and facilities.</p>
-              <span class="status">Website Project</span>
+              <p>
+                An educational website project focused on presenting
+                college information, courses, facilities and student
+                information.
+              </p>
+              <span class="status">Educational Project</span>
             </div>
           </article>
 
@@ -540,18 +611,36 @@
                 </div>
               </div>
             </div>
+
             <div class="project-info">
               <div class="project-type">07 / Business</div>
               <h2>Brahmani Electrical Works</h2>
-              <p>A business website for electrical services in Ankleshwar, Gujarat.</p>
-              <a class="project-link"
-                 href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
-                 target="_blank" rel="noopener noreferrer">
+              <p>
+                A live business website for electrical services in
+                Ankleshwar, Gujarat, presenting services and enquiry
+                information.
+              </p>
+              <a
+                class="project-link"
+                href="https://riyap1072008-rgb.github.io/brahmani-electrical-works/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Visit Live Website ↗
               </a>
             </div>
           </article>
 
+        </div>
+
+        <div class="transparency-note">
+          <strong>About these projects:</strong>
+          Five projects are labelled as concepts and are design
+          demonstrations, not confirmed live client websites. The
+          Narmada College entry is an educational project. Brahmani
+          Electrical Works links to its live website.
+          Project descriptions should be updated if their actual
+          completion status changes.
         </div>
       </div>
     </section>
@@ -560,12 +649,15 @@
       <div class="container">
         <div class="cta-box">
           <div class="eyebrow">Let's Create Together</div>
+
           <h2>Have a Website Idea?</h2>
+
           <p>
-            Have an idea for a business website or personal portfolio?
-            Visit my contact section to discuss your project.
+            Need a website for a business, educational project or personal
+            portfolio? Visit my contact page to discuss your requirements.
           </p>
-          <a class="btn" href="index.html#contact">Let's Talk ↗</a>
+
+          <a class="btn" href="contact.html">Contact Me ↗</a>
         </div>
       </div>
     </section>
@@ -573,7 +665,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <strong>MS. RIYA PRAJAPATI — CREATIVE WEB STUDIO</strong>
+      <strong>RIYA PRAJAPATI — CREATIVE WEB STUDIO</strong>
       <span>© 2026 All rights reserved.</span>
     </div>
   </footer>
