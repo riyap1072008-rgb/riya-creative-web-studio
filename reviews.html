@@ -4,201 +4,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Reviews | Riya Prajapati Creative Web Studio</title>
-<meta name="description" content="Read client feedback and reviews about website design services by Riya Prajapati Creative Web Studio.">
+
+<title>Client Reviews | Riya Prajapati - Creative Web Studio</title>
+
+<meta name="description" content="Read client reviews and share your experience with Riya Prajapati Creative Web Studio. Your feedback helps improve website design services.">
+
+<meta name="author" content="Riya Prajapati">
 <meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/reviews.html">
 
 <style>
 :root {
-    --bg:#071426;
-    --surface:#0d203a;
-    --card:#102541;
-    --text:#fff;
-    --muted:#c0cada;
-    --gold:#d6ad55;
-    --border:rgba(214,173,85,.35);
+    --navy: #071a33;
+    --gold: #d8ad55;
+    --bg: #f5f7fb;
+    --text: #17243a;
+    --muted: #657187;
+    --card: #ffffff;
+    --border: #e5e9f0;
 }
-body.light-mode {
-    --bg:#f4f7fc;
-    --surface:#e8eef7;
-    --card:#fff;
-    --text:#10213a;
-    --muted:#4d5b70;
-    --gold:#a87919;
-    --border:rgba(168,121,25,.35);
+
+body.dark {
+    --bg: #071321;
+    --text: #f2f5fa;
+    --muted: #b3bfd0;
+    --card: #10243a;
+    --border: #263c53;
 }
-* {box-sizing:border-box;margin:0;padding:0}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family:Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
 }
+
 header {
-    position:sticky;top:0;z-index:10;
-    background:var(--surface);
-    border-bottom:1px solid var(--border);
-    padding:17px 5%;
-    display:flex;justify-content:space-between;
-    align-items:center;flex-wrap:wrap;gap:15px;
+    background: var(--navy);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
-.brand {color:var(--gold);text-decoration:none;font-weight:bold}
-nav {display:flex;gap:15px;flex-wrap:wrap;align-items:center}
-nav a {color:var(--text);text-decoration:none;font-size:13px}
-nav a:hover {color:var(--gold)}
-.theme-toggle {
-    background:var(--card);color:var(--text);
-    border:1px solid var(--gold);border-radius:20px;
-    padding:8px 12px;cursor:pointer;
+
+.logo {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
 }
+
+header a.back {
+    color: white;
+    text-decoration: none;
+}
+
+header a.back:hover {
+    color: var(--gold);
+}
+
 .hero {
-    text-align:center;padding:85px 6% 65px;
-    background:radial-gradient(circle at top,var(--surface),var(--bg) 70%);
+    background: linear-gradient(135deg, #071a33, #173b61);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
 }
-.eyebrow {
-    color:var(--gold);font-size:12px;
-    letter-spacing:3px;font-weight:bold;
+
+.hero span {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
 }
-h1 {font-size:clamp(34px,6vw,55px);margin:12px 0}
-h1 span,h2 span {color:var(--gold)}
-.hero p {color:var(--muted);max-width:650px;margin:12px auto}
-section {padding:65px 7%}
-.heading {text-align:center;margin-bottom:35px}
-.heading h2 {font-size:clamp(27px,4vw,36px);margin:8px 0}
-.heading p {color:var(--muted)}
-.review-grid {
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:22px;max-width:1100px;margin:auto;
+
+.hero h1 {
+    font-size: 42px;
+    margin: 12px 0;
 }
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #dce5ef;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
 .review-card {
-    background:var(--card);border:1px solid var(--border);
-    border-radius:14px;padding:25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.04);
 }
-.stars {color:var(--gold);font-size:21px;letter-spacing:3px}
-.review-card h3 {color:var(--gold);margin:12px 0 5px}
-.review-card p {color:var(--muted);font-size:14px}
-.notice {
-    max-width:850px;margin:35px auto 0;
-    padding:18px 22px;border:1px solid var(--border);
-    border-radius:10px;color:var(--muted);
-    background:var(--surface);font-size:13px;
+
+.stars {
+    color: #d8ad55;
+    font-size: 22px;
+    margin-bottom: 12px;
 }
-.cta {text-align:center;background:var(--surface)}
-.cta p {color:var(--muted);margin:12px 0 22px}
-.button {
-    display:inline-block;padding:12px 22px;
-    margin:5px;border:1px solid var(--gold);
-    border-radius:7px;text-decoration:none;
-    font-weight:bold;color:var(--gold);
+
+.review-card h3 {
+    margin-bottom: 8px;
 }
-.primary {background:var(--gold);color:#071426}
+
+.review-card p {
+    color: var(--muted);
+}
+
+.feedback-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 35px 22px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.feedback-box h2 {
+    margin-bottom: 12px;
+}
+
+.feedback-box p {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 13px 24px;
+    border-radius: 7px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #efc979;
+    transform: translateY(-3px);
+}
+
 footer {
-    text-align:center;padding:25px 12px;
-    background:var(--surface);color:var(--muted);font-size:13px;
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
 }
-footer a {color:var(--gold)}
-@media(max-width:800px) {
-    .review-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
-    header {justify-content:center}
+
+footer p {
+    color: #dce5ef;
+    font-size: 14px;
+    margin: 5px;
 }
-@media(max-width:550px) {
-    .review-grid {grid-template-columns:1fr}
-    header {padding:15px 4%}
-    nav {justify-content:center;gap:11px}
+
+footer a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-    <a href="index.html" class="brand">MS. RIYA PRAJAPATI</a>
-    <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="order.html">Order Website</a>
-        <a href="contact.html">Contact</a>
-        <button class="theme-toggle" id="themeToggle" type="button">☀️ Light Mode</button>
-    </nav>
+    <a class="logo" href="index.html">RIYA PRAJAPATI</a>
+    <a class="back" href="index.html">← Back to Home</a>
 </header>
 
-<main>
 <section class="hero">
-    <p class="eyebrow">CLIENT FEEDBACK</p>
-    <h1>Client <span>Reviews</span></h1>
+    <span>CLIENT EXPERIENCES</span>
+    <h1>Client Reviews</h1>
     <p>
-        Every project is an opportunity to learn, create and improve.
-        Genuine feedback helps make every website experience better.
+        Every project is an opportunity to learn, create
+        and improve. Your honest feedback matters.
     </p>
 </section>
 
-<section>
-    <div class="heading">
-        <p class="eyebrow">YOUR FEEDBACK MATTERS</p>
-        <h2>What Clients <span>Say</span></h2>
-        <p>Customer feedback will be displayed here after it is received and approved.</p>
+<main class="container">
+
+    <h2 class="section-title">What Clients Say</h2>
+
+    <p class="section-intro">
+        Genuine feedback from people who have experienced my work.
+    </p>
+
+    <div class="reviews-grid">
+
+        <!-- Add genuine client reviews here only
+             after receiving permission to publish them. -->
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <h3>Your Experience Matters</h3>
+            <p>
+                Have you worked with Riya Prajapati?
+                Share your honest experience using the feedback form.
+            </p>
+        </div>
+
     </div>
 
-    <div class="review-grid">
-        <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <h3>Customer Review</h3>
-            <p>Genuine customer feedback will appear here soon.</p>
-        </article>
+    <div class="feedback-box">
 
-        <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <h3>Customer Review</h3>
-            <p>This space is reserved for feedback from a real website client.</p>
-        </article>
+        <h2>Share Your Experience</h2>
 
-        <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <h3>Customer Review</h3>
-            <p>Real experiences and feedback will be added with permission.</p>
-        </article>
+        <p>
+            Your feedback helps improve website design
+            services and future projects.
+        </p>
+
+        <a href="feedback.html" class="btn">
+            Send Your Feedback ↗
+        </a>
+
     </div>
 
-    <div class="notice">
-        <strong>Note:</strong> These are placeholders, not actual customer testimonials.
-        They will be replaced with genuine reviews shared by clients.
-    </div>
-</section>
-
-<section class="cta">
-    <p class="eyebrow">HAVE WORKED WITH ME?</p>
-    <h2>Share Your <span>Feedback</span></h2>
-    <p>Your honest feedback helps improve my website design services.</p>
-    <a href="contact.html" class="button primary">Send Your Feedback ↗</a>
-    <a href="portfolio.html" class="button">View My Work</a>
-</section>
 </main>
 
 <footer>
-    <p>© 2026 MS. RIYA PRAJAPATI — Creative Web Studio.</p>
-    <p><a href="index.html">Back to Home</a></p>
+
+    <h3 style="color:#d8ad55;">
+        RIYA PRAJAPATI
+    </h3>
+
+    <p>Creative Web Studio</p>
+
+    <p>
+        © <span id="year"></span>
+        Riya Prajapati. All Rights Reserved.
+    </p>
+
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="contact.html">Contact</a>
+    </p>
+
 </footer>
 
 <script>
-const toggle = document.getElementById("themeToggle");
-
-function applyTheme(theme) {
-    document.body.classList.toggle("light-mode",theme === "light");
-    toggle.textContent = theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
-}
-try {
-    applyTheme(localStorage.getItem("riyaTheme") === "light" ? "light" : "dark");
-} catch(error) {
-    applyTheme("dark");
-}
-toggle.addEventListener("click",function() {
-    const theme = document.body.classList.contains("light-mode") ? "dark" : "light";
-    applyTheme(theme);
-    try {localStorage.setItem("riyaTheme",theme)} catch(error) {}
-});
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 </script>
+
 </body>
 </html>
