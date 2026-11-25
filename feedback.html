@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Share Your Feedback | Riya Prajapati</title>
+<meta name="description" content="Share your experience with Riya Prajapati Creative Web Studio.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #071426;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+header {
+  padding: 22px 8%;
+  border-bottom: 1px solid #c9a34a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  color: #e6c36b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 650px;
+  margin: 55px auto;
+  padding: 35px;
+  background: #10233d;
+  border: 1px solid #c9a34a;
+  border-radius: 15px;
+}
+
+.tag {
+  color: #e6c36b;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 15px 0;
+  color: #e6c36b;
+}
+
+.intro {
+  text-align: center;
+  color: #d0d7e2;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #c9a34a;
+  border-radius: 7px;
+  background: #071426;
+  color: white;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.stars button {
+  background: none;
+  border: none;
+  color: #68758a;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+.stars button.active {
+  color: #e6c36b;
+}
+
+.permission {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: #d0d7e2;
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.permission input {
+  width: auto;
+  margin-top: 3px;
+}
+
+.submit {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+  background: #d6b45e;
+  color: #071426;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #f0d58b;
+}
+
+.note {
+  text-align: center;
+  color: #b9c4d3;
+  font-size: 13px;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #b9c4d3;
+  font-size: 13px;
+}
+
+@media(max-width:600px) {
+  .container {
+    margin: 25px 15px;
+    padding: 23px;
+  }
+
+  header {
+    padding: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">RIYA PRAJAPATI</a>
+  <a href="reviews.html">← Back to Reviews</a>
+</header>
+
+<div class="container">
+
+  <div class="tag">YOUR FEEDBACK MATTERS</div>
+
+  <h1>Share Your Experience</h1>
+
+  <p class="intro">
+    Thank you for choosing Riya Prajapati —
+    Creative Web Studio. Your honest feedback
+    helps improve my website design services.
+  </p>
+
+  <form id="feedbackForm">
+
+    <label for="name">Your Name *</label>
+    <input type="text" id="name" required
+    placeholder="Enter your name">
+
+    <label for="project">Project / Website Type *</label>
+    <input type="text" id="project" required
+    placeholder="Example: Business Website">
+
+    <label>Your Rating *</label>
+
+    <div class="stars" id="stars">
+      <button type="button" data-rating="1">★</button>
+      <button type="button" data-rating="2">★</button>
+      <button type="button" data-rating="3">★</button>
+      <button type="button" data-rating="4">★</button>
+      <button type="button" data-rating="5">★</button>
+    </div>
+
+    <label for="message">Your Feedback *</label>
+    <textarea id="message" required
+    placeholder="Write your honest experience..."></textarea>
+
+    <label class="permission">
+      <input type="checkbox" id="permission">
+      <span>I give permission for my feedback to be displayed on the website after review and approval.</span>
+    </label>
+
+    <button type="submit" class="submit">
+      Send Feedback on WhatsApp ↗
+    </button>
+
+  </form>
+
+  <p class="note">
+    Your feedback will be sent to WhatsApp for review.
+    It will not automatically appear on the website.
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Riya Prajapati | Creative Web Studio
+</footer>
+
+<script>
+let selectedRating = 0;
+
+const starButtons = document.querySelectorAll(".stars button");
+
+starButtons.forEach(button => {
+  button.addEventListener("click", function() {
+    selectedRating = Number(this.dataset.rating);
+
+    starButtons.forEach(star => {
+      star.classList.toggle(
+        "active",
+        Number(star.dataset.rating) <= selectedRating
+      );
+    });
+  });
+});
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  if (selectedRating === 0) {
+    alert("Please select your star rating.");
+    return;
+  }
+
+  const name = document.getElementById("name").value.trim();
+  const project = document.getElementById("project").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const permission = document.getElementById("permission").checked
+    ? "Yes, permission given."
+    : "No, permission not given.";
+
+  const whatsappNumber = "919426570574";
+
+  const text =
+`NEW CLIENT FEEDBACK
+
+Name: ${name}
+Project: ${project}
+Rating: ${selectedRating}/5 Stars
+
+Feedback:
+${message}
+
+Website Display Permission: ${permission}
+
+Please review this feedback.`;
+
+  const url = "https://wa.me/" + whatsappNumber +
+    "?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>
