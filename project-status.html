@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Status | Riya Creative Web Studio</title>
+
+<style>
+:root {
+    --bg:#071426;
+    --card:#102541;
+    --surface:#0d203a;
+    --text:#fff;
+    --muted:#c0cada;
+    --gold:#d6ad55;
+}
+* {box-sizing:border-box;margin:0;padding:0;}
+
+body {
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+header {
+    padding:20px;
+    text-align:center;
+    background:var(--surface);
+    border-bottom:1px solid var(--gold);
+}
+
+header h2 {color:var(--gold);}
+
+.container {
+    max-width:750px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.card {
+    background:var(--card);
+    border:1px solid rgba(214,173,85,.4);
+    border-radius:16px;
+    padding:28px;
+}
+
+h1 {
+    color:var(--gold);
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitle {
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:30px;
+}
+
+.project-info {
+    background:var(--surface);
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:25px;
+}
+
+.project-info p {margin:5px 0;}
+
+.progress-step {
+    display:flex;
+    gap:15px;
+    align-items:center;
+    margin:22px 0;
+}
+
+.circle {
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#26384d;
+    border:2px solid #68778a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.done .circle {
+    background:var(--gold);
+    color:#071426;
+    border-color:var(--gold);
+}
+
+.active .circle {
+    border:3px solid var(--gold);
+    color:var(--gold);
+}
+
+.step-text h3 {font-size:15px;}
+.step-text p {font-size:12px;color:var(--muted);}
+
+.status-message {
+    margin-top:25px;
+    padding:15px;
+    background:var(--surface);
+    border-left:3px solid var(--gold);
+    border-radius:7px;
+    color:var(--muted);
+}
+
+footer {
+    text-align:center;
+    padding:25px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+footer span {color:var(--gold);}
+
+@media(max-width:500px) {
+    .container {margin:20px auto;}
+    .card {padding:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>RIYA PRAJAPATI</h2>
+<p>Creative Web Studio</p>
+</header>
+
+<main class="container">
+<div class="card">
+
+<h1>Project Status</h1>
+<p class="subtitle">Track your website project progress</p>
+
+<div class="project-info">
+<p><strong>Project:</strong> Business Website</p>
+<p><strong>Client:</strong> Demo Customer</p>
+<p><strong>Current Status:</strong> Designing</p>
+</div>
+
+<div class="progress-step done">
+<div class="circle">✓</div>
+<div class="step-text">
+<h3>Order Received</h3>
+<p>Your project enquiry has been received.</p>
+</div>
+</div>
+
+<div class="progress-step active">
+<div class="circle">2</div>
+<div class="step-text">
+<h3>Planning & Designing</h3>
+<p>Website design work is in progress.</p>
+</div>
+</div>
+
+<div class="progress-step">
+<div class="circle">3</div>
+<div class="step-text">
+<h3>Website Development</h3>
+<p>Your website is being developed.</p>
+</div>
+</div>
+
+<div class="progress-step">
+<div class="circle">4</div>
+<div class="step-text">
+<h3>Client Review</h3>
+<p>Website is ready for your review.</p>
+</div>
+</div>
+
+<div class="progress-step">
+<div class="circle">5</div>
+<div class="step-text">
+<h3>Completed</h3>
+<p>Your website project is completed.</p>
+</div>
+</div>
+
+<div class="status-message">
+<strong>Latest Update:</strong>
+Your website design work is currently in progress.
+</div>
+
+</div>
+</main>
+
+<footer>
+© 2026 <span>Ms. Riya Prajapati</span> — Creative Web Studio
+</footer>
+
+</body>
+</html>
