@@ -5,64 +5,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Client Reviews | Riya Prajapati - Creative Web Studio</title>
+<title>Client Reviews | Ms. Riya Prajapati</title>
 
-<meta name="description" content="Read client reviews and share your experience with Riya Prajapati Creative Web Studio.">
-
-<meta name="author" content="Riya Prajapati">
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://riyap1072008-rgb.github.io/riya-creative-web-studio/reviews.html">
+<meta name="description" content="Read client reviews and ratings for Ms. Riya Prajapati Creative Web Studio.">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-:root {
-    --navy: #071a33;
-    --gold: #d8ad55;
-    --bg: #f5f7fb;
-    --text: #17243a;
-    --muted: #657187;
-    --card: #ffffff;
-    --border: #e5e9f0;
-}
-
-body.dark {
-    --bg: #071321;
-    --text: #f2f5fa;
-    --muted: #b3bfd0;
-    --card: #10243a;
-    --border: #263c53;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --navy: #071426;
+    --navy-light: #102541;
+    --gold: #d6ad55;
+    --white: #ffffff;
+    --muted: #b9c4d3;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--navy);
+    color: var(--white);
     line-height: 1.7;
 }
 
 header {
-    background: var(--navy);
-    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    padding: 22px 8%;
+    gap: 20px;
+    border-bottom: 1px solid rgba(214,173,85,.3);
 }
 
-.logo {
+.brand {
     color: var(--gold);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 nav {
@@ -83,66 +67,122 @@ nav a.active {
 }
 
 .hero {
-    background: linear-gradient(135deg, #071a33, #173b61);
-    color: white;
     text-align: center;
-    padding: 75px 20px;
+    padding: 75px 20px 45px;
 }
 
-.hero span {
+.eyebrow {
     color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 4px;
     font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 13px;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin: 12px 0;
+h1 {
+    font-size: clamp(35px,6vw,58px);
+    line-height: 1.2;
+    margin: 15px 0;
 }
 
-.hero p {
-    max-width: 650px;
-    margin: auto;
-    color: #dce5ef;
+h1 span {
+    color: var(--gold);
 }
 
-.container {
+.hero p,
+.section-heading p {
+    color: var(--muted);
+}
+
+.section {
     max-width: 1100px;
     margin: auto;
-    padding: 60px 20px;
+    padding: 25px 25px 70px;
 }
 
-.section-title {
+.section-heading {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 12px;
+    margin-bottom: 30px;
 }
 
-.section-intro {
+h2 {
+    color: var(--gold);
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+/* RATING TABLE */
+
+.rating-wrapper {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(214,173,85,.35);
+}
+
+.rating-guide {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--navy-light);
+}
+
+.rating-guide th,
+.rating-guide td {
+    padding: 15px;
     text-align: center;
-    color: var(--muted);
-    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(214,173,85,.2);
 }
 
-.reviews-grid {
+.rating-guide th {
+    color: var(--gold);
+    font-size: 15px;
+}
+
+.rating-guide tr:last-child td {
+    border-bottom: none;
+}
+
+.rating-guide td:first-child {
+    font-size: 21px;
+    letter-spacing: 3px;
+}
+
+.rating-guide tr:hover {
+    background: rgba(214,173,85,.08);
+}
+
+.very-good { color: #45df91; font-weight: bold; }
+.good { color: #65b9ff; font-weight: bold; }
+.average { color: #ffd45c; font-weight: bold; }
+.bad { color: #ffad65; font-weight: bold; }
+.very-bad { color: #ff7777; font-weight: bold; }
+
+/* REVIEWS */
+
+.review-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
 }
 
 .review-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    background: var(--navy-light);
+    border: 1px solid rgba(214,173,85,.25);
+    border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.04);
     overflow-wrap: anywhere;
 }
 
 .stars {
-    color: #d8ad55;
-    font-size: 22px;
+    color: var(--gold);
+    font-size: 23px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.rating-label {
+    font-size: 13px;
+    font-weight: bold;
     margin-bottom: 12px;
 }
 
@@ -152,38 +192,36 @@ nav a.active {
 
 .review-card p {
     color: var(--muted);
+    font-size: 14px;
     white-space: pre-wrap;
 }
 
 .project-label {
     color: var(--gold);
-    font-size: 13px;
-    margin-top: 12px;
+    font-size: 12px;
+    margin-top: 10px;
 }
 
 .date-label {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 8px;
 }
 
-.feedback-box {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 35px 22px;
-    margin-top: 50px;
+/* FORM */
+
+.form-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px;
+    background: var(--navy-light);
+    border: 1px solid rgba(214,173,85,.3);
+    border-radius: 18px;
 }
 
-.feedback-box h2 {
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.feedback-box > p {
-    text-align: center;
+.form-card > p {
     color: var(--muted);
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .form-group {
@@ -192,17 +230,16 @@ nav a.active {
 
 label {
     display: block;
-    font-weight: bold;
     margin-bottom: 7px;
 }
 
 input, select, textarea {
     width: 100%;
     padding: 13px;
-    border-radius: 7px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
+    border-radius: 9px;
+    border: 1px solid #344760;
+    background: #091a30;
+    color: white;
     font: inherit;
 }
 
@@ -210,6 +247,8 @@ textarea {
     min-height: 120px;
     resize: vertical;
 }
+
+/* STAR SELECTOR */
 
 .rating-options {
     display: flex;
@@ -224,7 +263,7 @@ textarea {
 
 .rating-options label {
     font-size: 35px;
-    color: #9aa4b2;
+    color: #667085;
     cursor: pointer;
     margin: 0;
 }
@@ -235,26 +274,22 @@ textarea {
     color: var(--gold);
 }
 
-.btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    padding: 13px 24px;
-    border-radius: 7px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: #efc979;
-    transform: translateY(-2px);
+.rating-help {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
 }
 
 .submit-btn {
     width: 100%;
+    padding: 14px;
+    background: var(--gold);
+    color: var(--navy);
     font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
 }
 
 .submit-btn:disabled {
@@ -268,26 +303,24 @@ textarea {
 }
 
 .success-message {
-    background: rgba(22,139,80,.12);
+    background: rgba(22,139,80,.15);
     border: 1px solid #168b50;
-    color: #168b50;
+    color: #b8f5d0;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-}
-
-body.dark .success-message {
-    color: #b8f5d0;
+    line-height: 1.8;
 }
 
 .success-message h3 {
+    color: #5be49a;
     font-size: 22px;
     margin-bottom: 8px;
 }
 
 .error-message {
-    color: #d93636;
-    margin-top: 15px;
+    color: #ff9999;
+    padding: 12px 0;
 }
 
 .whatsapp-link {
@@ -305,38 +338,30 @@ body.dark .success-message {
 .notice {
     font-size: 12px;
     color: var(--muted);
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 footer {
-    background: var(--navy);
-    color: white;
     text-align: center;
-    padding: 30px 15px;
-}
-
-footer p {
-    color: #dce5ef;
-    font-size: 14px;
-    margin: 5px;
+    padding: 25px 15px;
+    border-top: 1px solid rgba(214,173,85,.25);
+    color: var(--muted);
+    font-size: 13px;
 }
 
 footer span {
     color: var(--gold);
 }
 
-footer a {
-    color: var(--gold);
-    text-decoration: none;
+@media(max-width:850px) {
+    .review-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
-@media(max-width: 650px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-
+@media(max-width:650px) {
     header {
-        justify-content: center;
+        flex-direction: column;
         text-align: center;
     }
 
@@ -345,12 +370,27 @@ footer a {
         gap: 13px;
     }
 
-    .container {
-        padding: 40px 16px;
+    .review-grid {
+        grid-template-columns: 1fr;
     }
 
-    .feedback-box {
-        padding: 25px 18px;
+    .section {
+        padding: 20px 18px 55px;
+    }
+
+    .form-card {
+        padding: 23px;
+    }
+
+    .rating-guide th,
+    .rating-guide td {
+        padding: 11px 7px;
+        font-size: 13px;
+    }
+
+    .rating-guide td:first-child {
+        font-size: 17px;
+        letter-spacing: 1px;
     }
 }
 </style>
@@ -359,7 +399,7 @@ footer a {
 <body>
 
 <header>
-    <a class="logo" href="index.html">MS. RIYA PRAJAPATI</a>
+    <div class="brand">MS. RIYA PRAJAPATI</div>
 
     <nav>
         <a href="welcome.html">Welcome</a>
@@ -372,7 +412,7 @@ footer a {
 </header>
 
 <section class="hero">
-    <span>CLIENT FEEDBACK</span>
+    <div class="eyebrow">CLIENT FEEDBACK</div>
 
     <h1>Every Project <span>Matters.</span></h1>
 
@@ -383,21 +423,74 @@ footer a {
     </p>
 </section>
 
-<main class="container">
+<main>
 
-    <h2 class="section-title">Client Reviews</h2>
+<section class="section">
 
-    <p class="section-intro">
-        Feedback shared by our clients.
-    </p>
+    <div class="section-heading">
+        <h2>⭐ Rating Guide</h2>
+        <p>Choose a rating that matches your experience.</p>
+    </div>
 
-    <div class="reviews-grid" id="reviewList">
+    <div class="rating-wrapper">
+        <table class="rating-guide">
+            <thead>
+                <tr>
+                    <th>Rating</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td class="very-good">Very Good</td>
+                </tr>
+
+                <tr>
+                    <td>⭐⭐⭐⭐</td>
+                    <td class="good">Good</td>
+                </tr>
+
+                <tr>
+                    <td>⭐⭐⭐</td>
+                    <td class="average">Average</td>
+                </tr>
+
+                <tr>
+                    <td>⭐⭐</td>
+                    <td class="bad">Bad</td>
+                </tr>
+
+                <tr>
+                    <td>⭐</td>
+                    <td class="very-bad">Very Bad</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-heading">
+        <h2>Client Reviews</h2>
+        <p>Feedback shared by our clients.</p>
+    </div>
+
+    <div class="review-grid" id="reviewList">
         <p>Loading reviews...</p>
     </div>
 
-    <section class="feedback-box" id="write-review">
+</section>
 
+<section class="section" id="write-review">
+
+    <div class="section-heading">
         <h2>Write a Review</h2>
+        <p>Share your genuine experience.</p>
+    </div>
+
+    <div class="form-card">
+
+        <h2>Your Feedback</h2>
 
         <p>
             Thank you for sharing your experience.
@@ -424,21 +517,25 @@ footer a {
                 <div class="rating-options">
 
                     <input type="radio" id="star5" name="rating" value="5" required>
-                    <label for="star5">★</label>
+                    <label for="star5" title="Very Good">★</label>
 
                     <input type="radio" id="star4" name="rating" value="4">
-                    <label for="star4">★</label>
+                    <label for="star4" title="Good">★</label>
 
                     <input type="radio" id="star3" name="rating" value="3">
-                    <label for="star3">★</label>
+                    <label for="star3" title="Average">★</label>
 
                     <input type="radio" id="star2" name="rating" value="2">
-                    <label for="star2">★</label>
+                    <label for="star2" title="Bad">★</label>
 
                     <input type="radio" id="star1" name="rating" value="1">
-                    <label for="star1">★</label>
+                    <label for="star1" title="Very Bad">★</label>
 
                 </div>
+
+                <p class="rating-help" id="ratingHelp">
+                    Select your rating from 1 to 5 stars.
+                </p>
             </div>
 
             <div class="form-group">
@@ -465,7 +562,7 @@ footer a {
                 ></textarea>
             </div>
 
-            <button type="submit" class="btn submit-btn" id="submitBtn">
+            <button type="submit" class="submit-btn" id="submitBtn">
                 Submit Review
             </button>
 
@@ -487,23 +584,16 @@ footer a {
             </p>
 
         </form>
-    </section>
+
+    </div>
+</section>
 
 </main>
 
 <footer>
-    <h3><span>RIYA PRAJAPATI</span></h3>
-    <p>Creative Web Studio</p>
-
-    <p>
-        © <span id="year"></span>
-        Riya Prajapati. All Rights Reserved.
-    </p>
-
-    <p>
-        <a href="index.html">Home</a> |
-        <a href="contact.html">Contact</a>
-    </p>
+    © 2026 <span>Ms. Riya Prajapati</span> | Creative Web Studio
+    <br>
+    Designed with creativity and care.
 </footer>
 
 <script>
@@ -525,9 +615,39 @@ const reviewForm = document.getElementById("reviewForm");
 const formMessage = document.getElementById("formMessage");
 const submitBtn = document.getElementById("submitBtn");
 const whatsappLink = document.getElementById("whatsappLink");
+const ratingHelp = document.getElementById("ratingHelp");
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+const ratingNames = {
+    5: "Very Good",
+    4: "Good",
+    3: "Average",
+    2: "Bad",
+    1: "Very Bad"
+};
+
+const ratingClasses = {
+    5: "very-good",
+    4: "good",
+    3: "average",
+    2: "bad",
+    1: "very-bad"
+};
+
+/* UPDATE RATING LABEL */
+
+document.querySelectorAll('input[name="rating"]').forEach(input => {
+    input.addEventListener("change", function() {
+        const value = Number(this.value);
+
+        ratingHelp.textContent =
+            "You selected: " + ratingNames[value];
+
+        ratingHelp.className =
+            "rating-help " + ratingClasses[value];
+    });
+});
+
+/* SAFE HTML */
 
 function escapeHTML(value) {
     return String(value).replace(/[&<>"']/g, function(char) {
@@ -541,7 +661,10 @@ function escapeHTML(value) {
     });
 }
 
-function createReviewCard(item) {
+/* DISPLAY REVIEW */
+
+function displayReview(item) {
+
     const card = document.createElement("article");
     card.className = "review-card";
 
@@ -551,6 +674,10 @@ function createReviewCard(item) {
     card.innerHTML = `
         <div class="stars">
             ${"★".repeat(rating)}${"☆".repeat(5-rating)}
+        </div>
+
+        <div class="rating-label ${ratingClasses[rating]}">
+            ${ratingNames[rating]}
         </div>
 
         <h3>${escapeHTML(item.name)}</h3>
@@ -566,11 +693,14 @@ function createReviewCard(item) {
         </div>
     `;
 
-    return card;
+    reviewList.appendChild(card);
 }
 
+/* LOAD REVIEWS */
+
 async function loadReviews() {
-    reviewList.innerHTML = "";
+
+    reviewList.innerHTML = "<p>Loading reviews...</p>";
 
     const { data, error } = await db
         .from("reviews")
@@ -578,6 +708,7 @@ async function loadReviews() {
         .order("created_at", { ascending: false });
 
     if (error) {
+
         reviewList.textContent =
             "Unable to load reviews. Please try again later.";
 
@@ -585,22 +716,27 @@ async function loadReviews() {
         return;
     }
 
+    reviewList.innerHTML = "";
+
     if (!data || data.length === 0) {
+
         reviewList.innerHTML = `
             <article class="review-card">
                 <h3>Be the First to Review!</h3>
                 <p>Your genuine feedback is welcome.</p>
             </article>
         `;
+
         return;
     }
 
-    data.forEach(function(item) {
-        reviewList.appendChild(createReviewCard(item));
-    });
+    data.forEach(displayReview);
 }
 
+/* SUBMIT REVIEW */
+
 reviewForm.addEventListener("submit", async function(event) {
+
     event.preventDefault();
 
     const name =
@@ -616,9 +752,11 @@ reviewForm.addEventListener("submit", async function(event) {
         document.getElementById("reviewText").value.trim();
 
     if (!name || !ratingInput || !projectType || !review) {
+
         formMessage.className = "error-message";
         formMessage.textContent =
             "Please complete all required fields.";
+
         return;
     }
 
@@ -627,6 +765,7 @@ reviewForm.addEventListener("submit", async function(event) {
 
     formMessage.textContent = "";
     formMessage.className = "";
+
     whatsappLink.style.display = "none";
 
     const newReview = {
@@ -637,29 +776,20 @@ reviewForm.addEventListener("submit", async function(event) {
     };
 
     try {
-        const { data, error } = await db
+
+        const { error } = await db
             .from("reviews")
-            .insert([newReview])
-            .select()
-            .single();
+            .insert([newReview]);
 
         if (error) {
             throw error;
         }
 
-        formMessage.className = "success-message";
-
-        formMessage.innerHTML = `
-            <h3>🎉 Thank You, ${escapeHTML(name)}!</h3>
-            <p>Your review has been published successfully.</p>
-            <p>We truly appreciate your valuable feedback.</p>
-            <p>Thank you for supporting MS. RIYA PRAJAPATI!</p>
-        `;
-
         const message =
             "New Website Review\n\n" +
             "Name: " + name + "\n" +
-            "Rating: " + ratingInput.value + "/5\n" +
+            "Rating: " + ratingInput.value + "/5 - " +
+            ratingNames[Number(ratingInput.value)] + "\n" +
             "Project: " + projectType + "\n" +
             "Review: " + review;
 
@@ -669,24 +799,44 @@ reviewForm.addEventListener("submit", async function(event) {
 
         whatsappLink.style.display = "block";
 
+        formMessage.className = "success-message";
+
+        formMessage.innerHTML = `
+            <h3>🎉 Thank You, ${escapeHTML(name)}!</h3>
+            <p>Your review has been submitted successfully.</p>
+            <p>We truly appreciate your valuable feedback.</p>
+            <p>Thank you for supporting MS. RIYA PRAJAPATI!</p>
+        `;
+
         reviewForm.reset();
+
+        ratingHelp.textContent =
+            "Select your rating from 1 to 5 stars.";
+
+        ratingHelp.className = "rating-help";
 
         await loadReviews();
 
-    } catch (error) {
+    } catch(error) {
+
         console.error("Review submission error:", error);
 
         formMessage.className = "error-message";
+
         formMessage.textContent =
             "Sorry! Your review could not be submitted. Please try again.";
 
     } finally {
+
         submitBtn.disabled = false;
         submitBtn.textContent = "Submit Review";
     }
 });
 
+/* INITIAL LOAD */
+
 loadReviews();
+
 </script>
 
 </body>
